@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>القرآن الكريم منقى صوتياً – الشيخ محمود سلمان الحلفاوي | صوت + مرئيات Offline</title>
+<meta name="description" content="تطبيق قرآني يعمل 100% بدون إنترنت – 114 سورة صوت MP3 + تلاوات مرئية MP4 – الشيخ محمود سلمان الحلفاوي – هندسة صوتية منقاة">
+<meta name="theme-color" content="#0b1122">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  * { font-family: 'Tajawal','IBM Plex Sans Arabic',system-ui,sans-serif; }
+  .quran-arabic { font-family: 'Amiri','Scheherazade New',serif; }
+  :root{
+    --gold: #FFD700; --gold2:#ffc44d; --emerald:#00C896; --emerald2:#009d76;
+    --navy:#0B1026; --navy2:#111936; --ink:#050508;
+    --glass: rgba(255,255,255,.065);
+    --glass-b: rgba(255,215,0,.18);
+    --text:#f3f1e8; --dim:#b6b3a8;
+    --card:#10172dcc;
+  }
+  [data-theme="light"]{
+    --navy:#f7f4ea; --navy2:#ffffff; --ink:#f3f0e7;
+    --glass: rgba(11,16,38,.045);
+    --glass-b: rgba(11,16,38,.12);
+    --text:#1a2238; --dim:#606a82;
+    --card:#fffffff2;
+  }
+  body{
+    background:var(--navy); color:var(--text);
+    min-height:100vh; overflow-x:hidden;
+    transition: background .35s, color .35s;
+  }
+  .islamic-bg{
+    position:fixed; inset:0; z-index:-3;
+    background:
+      radial-gradient(1100px 700px at 88% -12%, rgba(0,200,150,.10), transparent 62%),
+      radial-gradient(900px 620px at -8% 18%, rgba(255,215,0,.075), transparent 60%),
+      radial-gradient(800px 800px at 50% 125%, rgba(0,200,150,.045), transparent 60%),
+      linear-gradient(168deg, #0b1026 0%, #0d1430 26%, #0a1126 60%, #050510 100%);
+  }
+  [data-theme="light"] .islamic-bg{
+    background:
+      radial-gradient(1100px 700px at 88% -12%, rgba(0,200,150,.11), transparent 60%),
+      radial-gradient(900px 620px at -8% 18%, rgba(255,193,7,.13), transparent 60%),
+      linear-gradient(168deg,#fffbf1 0%, #f6f1e2 45%, #efe9d8 100%);
+  }
+  .pattern{
+    position:fixed; inset:0; z-index:-2; opacity:.050;
+    background-image:url("data:image/svg+xml,%3Csvg width='160' height='160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FFD700' stroke-width='0.75' opacity='.9'%3E%3Cpath d='M80 22 L106 56 L146 56 L114 80 L146 104 L106 104 L80 138 L54 104 L14 104 L46 80 L14 56 L54 56Z'/%3E%3Ccircle cx='80' cy='80' r='20'/%3E%3Ccircle cx='80' cy='80' r='36' stroke-dasharray='4 4'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:190px 190px;
+    animation: drift 140s linear infinite;
+  }
+  [data-theme="light"] .pattern{ opacity:.074 }
+  @keyframes drift{ from{background-position:0 0} to{background-position:380px 380px} }
+
+  .glass{
+    background: var(--glass);
+    border:1px solid var(--glass-b);
+    backdrop-filter: blur(20px) saturate(1.18);
+    -webkit-backdrop-filter: blur(20px) saturate(1.18);
+    box-shadow: 0 10px 38px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.085), inset 0 -1px 0 rgba(0,0,0,.08);
+    transition: all .33s cubic-bezier(.2,.8,.2,1);
+  }
+  [data-theme="light"] .glass{
+    box-shadow: 0 12px 40px rgba(31,48,90,.07), inset 0 1px 0 rgba(255,255,255,.95);
+  }
+  .glass:hover{ border-color: rgba(255,215,0,.34); transform: translateY(-2px); }
+
+  .neo{
+    background: linear-gradient(145deg, rgba(255,255,255,.082), rgba(255,255,255,.025));
+    border:1px solid var(--glass-b);
+    box-shadow: 5px 5px 16px rgba(0,0,0,.28), -4px -4px 12px rgba(255,255,255,.032), inset 1px 1px 2px rgba(255,255,255,.065);
+    transition: all .2s;
+  }
+  [data-theme="light"] .neo{
+    background: linear-gradient(145deg,#fff,#f4f0e5);
+    box-shadow: 7px 7px 18px rgba(34,48,78,.078), -7px -7px 18px #fffffffa;
+  }
+  .neo:active{ transform:scale(.97); }
+
+  .gold-glow{ box-shadow: 0 0 26px rgba(255,215,0,.22), 0 0 54px rgba(255,215,0,.1); }
+  .emerald-glow{ box-shadow: 0 0 24px rgba(0,200,150,.24), 0 0 52px rgba(0,200,150,.10); }
+
+  .sheikh-frame{
+    position:relative; border-radius:26px; overflow:hidden;
+    background: linear-gradient(150deg, rgba(255,215,0,.11), rgba(0,200,150,.07));
+    border:1.7px solid rgba(255,215,0,.32);
+  }
+  .sheikh-frame::after{
+    content:''; position:absolute; inset:0;
+    background: radial-gradient(70% 90% at 60% 40%, transparent 35%, rgba(11,16,38,.16) 100%);
+    pointer-events:none;
+  }
+
+  .surah-card{ position:relative; overflow:hidden; }
+  .surah-card::before{
+    content:''; position:absolute; top:0; inset-inline-end:0; width:92px; height:92px;
+    background: radial-gradient(circle at top right, rgba(255,215,0,.095), transparent 70%);
+    pointer-events:none;
+  }
+  .surah-card.playing{
+    border-color: rgba(0,200,150,.56)!important;
+    box-shadow: 0 0 34px rgba(0,200,150,.17), inset 0 0 30px rgba(0,200,150,.035);
+  }
+
+  .surah-num{
+    width:54px; height:54px; flex-shrink:0;
+    border-radius:17px;
+    background: radial-gradient(circle at 30% 28%, rgba(255,215,0,.18), rgba(255,215,0,.04));
+    border:1.7px solid rgba(255,215,0,.46);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; color:var(--gold);
+    text-shadow: 0 0 14px rgba(255,215,0,.34);
+    position:relative;
+  }
+  .surah-num::after{ content:''; position:absolute; inset:6px; border-radius:12px; border:1px dashed rgba(255,215,0,.20); }
+
+  input[type=range].seek{
+    -webkit-appearance:none; appearance:none; width:100%; height:6px; border-radius:999px; cursor:pointer;
+    background: linear-gradient(to right, var(--gold) 0%, var(--gold) var(--p,0%), rgba(255,255,255,.18) var(--p,0%), rgba(255,255,255,.18) 100%);
+  }
+  input[type=range].seek::-webkit-slider-thumb{
+    -webkit-appearance:none; width:16px; height:16px; border-radius:50%;
+    background:var(--gold); box-shadow:0 0 12px rgba(255,215,0,.5); border:2px solid #1a1f37;
+  }
+  input[type=range].vseek{
+    -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:999px; cursor:pointer;
+    background: linear-gradient(to right, var(--emerald) 0%, var(--emerald) var(--pv,0%), rgba(255,255,255,.17) var(--pv,0%), rgba(255,255,255,.17) 100%);
+  }
+  input[type=range].vseek::-webkit-slider-thumb{
+    -webkit-appearance:none; width:14px; height:14px; border-radius:50%;
+    background:var(--emerald); box-shadow:0 0 10px rgba(0,200,150,.45); border:2px solid #0f1b2a;
+  }
+
+  .bars{ display:flex; gap:3px; align-items:flex-end; height:30px }
+  .bars i{ width:3px; border-radius:3px; background:linear-gradient(to top, var(--emerald), var(--gold)); animation: barz 1.05s ease-in-out infinite; }
+  .bars i:nth-child(1){ height:13px }
+  .bars i:nth-child(2){ height:20px; animation-delay:.14s }
+  .bars i:nth-child(3){ height:28px; animation-delay:.28s }
+  .bars i:nth-child(4){ height:16px; animation-delay:.08s }
+  .bars i:nth-child(5){ height:26px; animation-delay:.22s }
+  @keyframes barz{ 0%,100%{transform:scaleY(.55)} 50%{transform:scaleY(1)} }
+  .bars.paused i{ animation-play-state:paused; transform:scaleY(.42); opacity:.55 }
+
+  .chip{ padding:8px 16px; border-radius:999px; font-size:12.7px; font-weight:700; border:1px solid var(--glass-b); cursor:pointer; transition:all .2s; white-space:nowrap; background:var(--glass);}
+  .chip.active{ background:linear-gradient(135deg, rgba(255,215,0,.16), rgba(0,200,150,.12)); border-color:rgba(255,215,0,.52); color:var(--gold); box-shadow:0 0 18px rgba(255,215,0,.14) }
+
+  /* bottom nav 6 items */
+  .bottom-nav{
+    position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
+    width:min(690px, calc(100% - 16px)); z-index:70; padding:8px 10px; border-radius:24px;
+  }
+  .bottom-nav-inner{
+    display:flex; justify-content:space-between; align-items:center; gap:2px; overflow-x:auto;
+  }
+  .bottom-nav-inner::-webkit-scrollbar{ display:none }
+  .nav-item{ display:flex; flex-direction:column; align-items:center; gap:3px; font-size:10.7px; font-weight:700; color:var(--dim);
+    cursor:pointer; padding:6px 8px; border-radius:13px; min-width:56px; position:relative; transition:all .2s; flex:1; text-align:center;}
+  .nav-item.active{ color:var(--gold) }
+  .nav-item.active::before{ content:''; position:absolute; top:-4px; left:50%; transform:translateX(-50%); width:26px; height:3px; border-radius:3px; background:linear-gradient(90deg,var(--gold),var(--emerald)); box-shadow:0 0 10px rgba(255,215,0,.5) }
+  .nav-ico{ font-size:18px }
+
+  .player-dock{
+    position:fixed; bottom:88px; left:50%; transform:translateX(-50%) translateY(150%);
+    width:min(720px, calc(100% - 22px)); z-index:60; border-radius:24px;
+    transition: transform .44s cubic-bezier(.2,.9,.25,1);
+  }
+  .player-dock.open{ transform:translateX(-50%) translateY(0) }
+
+  .toast-wrap{ position:fixed; top:84px; left:50%; transform:translateX(-50%); z-index:130; display:flex; flex-direction:column; gap:8px; width:min(430px,92%); pointer-events:none }
+  .toast{ pointer-events:auto; padding:13px 16px; border-radius:16px; font-size:13.5px; font-weight:700; display:flex; align-items:center; gap:10px; animation: tin .32s ease }
+  @keyframes tin{ from{opacity:0; transform:translateY(-10px)} to{opacity:1; transform:translateY(0)} }
+
+  .skel{ background:linear-gradient(90deg, rgba(255,255,255,.045) 25%, rgba(255,255,255,.095) 50%, rgba(255,255,255,.045) 75%); background-size:200% 100%; animation:shim 1.5s infinite; border-radius:10px }
+  @keyframes shim{ 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+  [data-theme="light"] .skel{ background:linear-gradient(90deg,#ece7d8 25%,#f6f2e6 50%,#ece7d8 75%); background-size:200% 100% }
+
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px)} to{opacity:1; transform:translateY(0)} }
+  .fade-up{ animation:fadeUp .52s ease both }
+
+  ::-webkit-scrollbar{ width:7px; height:7px }
+  ::-webkit-scrollbar-thumb{ background:rgba(255,215,0,.28); border-radius:5px }
+
+  .offline-pill{
+    display:inline-flex; align-items:center; gap:7px;
+    padding:6px 13px; border-radius:999px; font-size:11.5px; font-weight:800;
+    background: rgba(0,200,150,.11); color:var(--emerald);
+    border:1px solid rgba(0,200,150,.28);
+  }
+  .file-badge{ font-size:11px; padding:4px 9px; border-radius:999px; font-weight:800 }
+  .file-ok{ background:rgba(0,200,150,.11); color:var(--emerald); border:1px solid rgba(0,200,150,.25) }
+  .file-miss{ background:rgba(255,120,70,.1); color:#ff9b72; border:1px solid rgba(255,120,70,.25) }
+
+  .text-dim{ color:var(--dim) }
+  .no-sb::-webkit-scrollbar{ display:none }
+  .no-sb{ -ms-overflow-style:none; scrollbar-width:none }
+
+  /* VIDEO */
+  .video-card{ position:relative; overflow:hidden; }
+  .video-thumb{
+    position:relative; aspect-ratio:16/9; border-radius:18px; overflow:hidden;
+    background:#0a0f22;
+    border:1px solid rgba(255,215,0,.18);
+  }
+  .video-thumb img, .video-thumb video{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .vt-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(to top, rgba(5,8,20,.78) 0%, rgba(5,8,20,.18) 38%, rgba(5,8,20,.05) 100%);
+  }
+  .vt-play{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:62px; height:62px; border-radius:50%;
+    background: radial-gradient(circle, rgba(255,215,0,.96), #ffcf33);
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; color:#1d1400; box-shadow:0 8px 26px rgba(255,215,0,.33);
+    transition: transform .2s;
+  }
+  .video-card:hover .vt-play{ transform:translate(-50%,-50%) scale(1.06) }
+  .vt-duration{
+    position:absolute; bottom:10px; inset-inline-end:10px;
+    background: rgba(8,14,32,.77); color:#ffe7a2; font-size:11.5px; font-weight:800;
+    padding:4px 9px; border-radius:9px; border:1px solid rgba(255,215,0,.22);
+    backdrop-filter: blur(5px);
+  }
+  .vt-number{
+    position:absolute; top:10px; inset-inline-start:10px;
+    background: rgba(0,200,150,.15); color:#73ffe0; font-size:11px; font-weight:800;
+    padding:4px 9px; border-radius:9px; border:1px solid rgba(0,200,150,.3);
+  }
+  .video-player-wrap{
+    border-radius:24px; overflow:hidden; background:#050912;
+    border:1.5px solid rgba(255,215,0,.28);
+    box-shadow: 0 18px 50px rgba(0,0,0,.45), 0 0 38px rgba(0,200,150,.08);
+  }
+  .v-controls{
+    background: linear-gradient(to top, rgba(7,12,28,.96), rgba(7,12,28,.72));
+    backdrop-filter: blur(10px);
+  }
+
+  @media(max-width:640px){
+    .surah-num{ width:48px; height:48px; border-radius:14px }
+    .bottom-nav{ bottom:8px; padding:6px 6px; border-radius:20px }
+    .nav-item{ font-size:9.8px; min-width:50px; padding:5px 4px }
+    .nav-ico{ font-size:17px }
+    .player-dock{ bottom:78px }
+    .vt-play{ width:54px; height:54px; font-size:22px }
+  }
+</style>
+</head>
+<body data-theme="dark" class="pb-32">
+<div class="islamic-bg"></div>
+<div class="pattern"></div>
+
+<div id="toastWrap" class="toast-wrap"></div>
+
+<!-- TOP BAR -->
+<header class="sticky top-0 z-40 glass" style="border-radius:0 0 22px 22px; border-top:none;">
+  <div class="max-w-[1240px] mx-auto px-4 md:px-8 py-[11px] flex items-center justify-between gap-3">
+    <div class="flex items-center gap-[12px]">
+      <div class="w-[46px] h-[46px] rounded-[15px] overflow-hidden gold-glow flex items-center justify-center" style="background:linear-gradient(135deg, rgba(255,215,0,.20), rgba(0,200,150,.14)); border:1px solid rgba(255,215,0,.40)">
+        <img src="assets/images/logo.png" alt="شعار" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <span style="display:none; font-size:22px">🕌</span>
+      </div>
+      <div class="leading-tight">
+        <div class="quran-arabic text-[16px] md:text-[18px] font-[700]" style="color:var(--gold)">القرآن الكريم منقى صوتياً</div>
+        <div class="text-[11px] text-dim tracking-wide flex items-center gap-2 flex-wrap">
+          <span id="topSheikhName">الشيخ محمود سلمان الحلفاوي</span>
+          <span class="offline-pill">● <span id="offlineLabel">OFFLINE</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <div class="hidden lg:flex items-center gap-[6px] px-[11px] py-[7px] rounded-[13px] text-[11.5px] font-[800]" style="background:rgba(0,200,150,.09); color:var(--emerald); border:1px solid rgba(0,200,150,.22)">
+        📦 <span id="localCountTop">114</span> صوتي
+        <span class="text-dim">•</span>
+        🎬 <span id="localVideoCountTop">0</span> مرئي
+      </div>
+      <button id="themeToggle" class="neo w-11 h-11 rounded-[14px] flex items-center justify-center text-[18px]" title="الوضع">🌙</button>
+      <button id="settingsOpenBtn" class="neo w-11 h-11 rounded-[14px] flex items-center justify-center text-[18px]" title="الإعدادات">⚙️</button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-[1240px] mx-auto px-[16px] md:px-[32px] pt-7 md:pt-10">
+
+  <!-- ============ HOME / AUDIO ============ -->
+  <section id="view-home" class="view-section">
+    <!-- SHEIKH HERO -->
+    <div class="glass rounded-[30px] p-5 md:p-8 mb-7 fade-up" style="border-color:rgba(255,215,0,.28)">
+      <div class="grid lg:grid-cols-[300px_1fr] gap-6 items-center">
+        <div class="sheikh-frame w-full max-w-[300px] mx-auto aspect-[4/5] relative emerald-glow">
+          <img id="sheikhPhoto"
+            src="assets/images/sheikh.jpg"
+            alt="الشيخ محمود سلمان الحلفاوي"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; document.getElementById('sheikhFallback').style.display='flex';">
+          <div id="sheikhFallback" class="absolute inset-0 hidden items-center justify-center flex-col text-center p-5" style="background:linear-gradient(160deg,#13203b,#0b1328)">
+            <div class="text-[54px] mb-2">🎙️</div>
+            <div class="quran-arabic text-[20px] font-[700]" style="color:var(--gold)">الشيخ محمود سلمان الحلفاوي</div>
+            <div class="text-[11.5px] text-dim mt-1">ضع صورتك في:<br><code style='color:var(--emerald)'>assets/images/sheikh.jpg</code></div>
+          </div>
+          <div class="absolute top-[12px] inset-inline-start-[12px] offline-pill" style="font-size:10.5px; padding:5px 10px">
+            ⬢ OFFLINE • HQ
+          </div>
+          <div class="absolute bottom-[12px] inset-inline-end-[12px] px-[11px] py-[6px] rounded-[12px] text-[11px] font-[800]" style="background:rgba(11,16,38,.66); color:#ffe082; border:1px solid rgba(255,215,0,.28); backdrop-filter:blur(8px)">
+            تلاوات منقاة 🔊🎬
+          </div>
+        </div>
+
+        <div class="text-center lg:text-right">
+          <div class="inline-flex items-center gap-2 px-[14px] py-[6px] rounded-full text-[11.7px] font-[800] mb-3"
+            style="background:linear-gradient(90deg, rgba(255,215,0,.13), rgba(0,200,150,.11)); color:var(--gold); border:1px solid rgba(255,215,0,.24)">
+            ✨ <span id="heroBadgeTxt">هندسة صوتية احترافية • صوت MP3 + فيديو MP4 • بدون إنترنت</span>
+          </div>
+          <h1 class="quran-arabic text-[30px] sm:text-[40px] md:text-[48px] font-[700] leading-[1.17] mb-3"
+            style="background:linear-gradient(98deg,#ffe57a 0%, #FFD700 34%, #1ddbb0 92%); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+            القرآن الكريم منقى صوتياً ومرئياً
+          </h1>
+          <div class="text-[15.5px] md:text-[17px] font-[700] mb-1" style="color:var(--emerald)">
+            بصوت الشيخ محمود سلمان الحلفاوي
+          </div>
+          <p class="text-dim text-[13.8px] md:text-[14.8px] leading-relaxed max-w-[720px] lg:ms-auto mx-auto lg:mx-0" id="heroDesc">
+            تطبيق قرآني احترافي يعمل بالكامل بدون إنترنت. ملفات صوت MP3 منقاة + ملفات فيديو MP4 H.264 مخزنة محلياً:
+            <code style="color:var(--gold)">assets/audio/</code> و <code style="color:var(--gold)">assets/videos/</code> • 114 سورة • تشغيل مستمر • حفظ الموضع تلقائياً
+          </p>
+
+          <div class="flex flex-wrap gap-[10px] justify-center lg:justify-start mt-5">
+            <button id="resumeBtn"
+              class="px-[20px] py-[13px] rounded-[15px] text-[14.5px] font-[800] flex items-center gap-2"
+              style="background:linear-gradient(135deg,var(--gold),#ffc032); color:#1a1304; box-shadow:0 8px 26px rgba(255,215,0,.26)">
+              ▶️ <span id="resumeBtnTxt">تشغيل آخر سورة</span>
+            </button>
+            <button id="resumeVideoBtn" class="neo px-[18px] py-[13px] rounded-[15px] text-[14px] font-[700]">
+              🎬 <span>استكمال آخر فيديو</span>
+            </button>
+            <button id="browseBtn" class="neo px-[18px] py-[13px] rounded-[15px] text-[14px] font-[700]">
+              📖 <span id="browseBtnTxt">تصفح المصحف</span>
+            </button>
+          </div>
+
+          <div class="flex flex-wrap gap-[10px] justify-center lg:justify-start mt-4 text-[12px] font-[700] text-dim">
+            <span class="chip">📦 114 MP3</span>
+            <span class="chip">🎬 MP4 H.264</span>
+            <span class="chip">⚙️ هندسة منقاة</span>
+            <span class="chip">🔒 100% Offline</span>
+            <span class="chip" id="detectedFilesChip">📁 صوت مكتشف: <b id="detectedCount" style="color:var(--emerald)">—</b> • 🎬 فيديو: <b id="detectedVideoCount" style="color:var(--gold)">—</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO SEARCH -->
+    <div class="glass rounded-[24px] p-[16px] md:p-[20px] mb-5 fade-up" style="animation-delay:.06s">
+      <div class="flex flex-col lg:flex-row gap-[12px] items-stretch lg:items-center">
+        <div class="flex-1 relative">
+          <span class="absolute top-1/2 -translate-y-1/2 text-[17px] text-dim" style="inset-inline-start:16px">🔍</span>
+          <input id="searchInput" type="text" placeholder="ابحث: اسم السورة • بالإنجليزية • الرقم"
+            class="w-full rounded-[16px] py-[15px] text-[15px] font-[500] outline-none"
+            style="padding-inline-start:48px; padding-inline-end:16px; background:rgba(255,255,255,.045); border:1px solid var(--glass-b); color:var(--text)">
+        </div>
+        <div class="text-[12px] text-dim font-[700] px-2 whitespace-nowrap">
+          <span id="resultsCount">114</span> <span id="lblSurahWord">سورة</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-[14px]" id="typeFilters">
+        <button class="chip active" data-filter="all">الكل</button>
+        <button class="chip" data-filter="Meccan">مكية</button>
+        <button class="chip" data-filter="Medinan">مدنية</button>
+        <button class="chip" data-filter="fav">❤️ <span data-i="favoritesShort">المفضلة</span></button>
+        <button class="chip" data-filter="available">📁 المتوفر محلياً</button>
+      </div>
+    </div>
+
+    <!-- reciter strip -->
+    <div class="mb-[18px] fade-up" style="animation-delay:.1s">
+      <div class="flex items-center justify-between mb-2 px-1">
+        <div class="text-[13px] font-[800] text-dim" id="reciterStripLabel">القارئ المعتمد – أوفلاين</div>
+        <div class="text-[11px] text-dim">جودة: <span style="color:var(--emerald); font-weight:800">Enhanced • HQ • MP3/MP4</span></div>
+      </div>
+      <div class="flex gap-[10px] overflow-x-auto no-sb pb-1" id="recitersStrip"></div>
+    </div>
+
+    <!-- SURAH GRID AUDIO -->
+    <div id="surahGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[15px] md:gap-[18px] pb-4"></div>
+    <div id="noResults" class="hidden text-center py-20">
+      <div class="text-[44px] mb-3">📖</div>
+      <div class="text-[17px] font-bold mb-1" id="noResultsTitle">لا توجد نتائج</div>
+      <div class="text-dim text-[13px]" id="noResultsDesc">جرّب كلمة أخرى أو غيّر الفلتر</div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEOS VIEW ============ -->
+  <section id="view-videos" class="view-section hidden">
+    <div class="mb-5">
+      <h2 class="text-[26px] md:text-[30px] font-[800] mb-1 flex items-center gap-2">🎬 <span>المرئيات القرآنية</span></h2>
+      <p class="text-dim text-[13.5px]">تلاوات الفيديو – الشيخ محمود سلمان الحلفاوي • MP4 H.264 • Offline 100%</p>
+    </div>
+
+    <!-- Video player box -->
+    <div id="videoPlayerBox" class="glass rounded-[26px] p-[16px] md:p-[22px] mb-6 hidden fade-up">
+      <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+        <div>
+          <div class="text-[12px] text-dim font-[700]">الآن يُعرض مرئياً</div>
+          <div class="quran-arabic text-[22px] md:text-[26px] font-[700]" id="vpTitle" style="color:var(--gold)">—</div>
+          <div class="text-[12.5px] text-dim" id="vpSub">الشيخ محمود سلمان الحلفاوي • Offline MP4</div>
+        </div>
+        <div class="flex gap-2">
+          <button id="vpCloseBtn" class="chip">✖️ إغلاق</button>
+          <button id="vpPipBtn" class="chip">📺 PiP</button>
+        </div>
+      </div>
+
+      <div class="video-player-wrap">
+        <video id="vPlayer"
+          class="w-full aspect-video bg-black block"
+          playsinline
+          preload="metadata"
+          style="max-height:62vh"
+        ></video>
+        <!-- custom controls -->
+        <div class="v-controls px-[14px] py-[13px]">
+          <!-- progress -->
+          <input type="range" id="vSeek" class="vseek mb-[8px]" min="0" max="100" value="0" style="--pv:0%">
+          <div class="flex justify-between text-[11.5px] text-dim font-[700] mb-[10px]">
+            <span id="vCurrent">00:00</span>
+            <span id="vDuration">00:00</span>
+          </div>
+          <!-- row 1 controls -->
+          <div class="flex flex-wrap items-center justify-center md:justify-between gap-[10px]">
+            <div class="flex items-center gap-[8px]">
+              <button class="neo w-10 h-10 rounded-[12px] text-[16px]" id="vPrevBtn" title="السابق">⏮️</button>
+              <button class="neo w-10 h-10 rounded-[12px] text-[16px]" id="vBack10" title="-10s">⏪</button>
+              <button id="vPlayBtn" class="w-[58px] h-[52px] rounded-[16px] text-[24px] flex items-center justify-center"
+                style="background:linear-gradient(135deg,var(--emerald),#00a87b); color:#fff; box-shadow:0 6px 20px rgba(0,200,150,.28)">▶️</button>
+              <button class="neo w-10 h-10 rounded-[12px] text-[16px]" id="vFwd10" title="+10s">⏩</button>
+              <button class="neo w-10 h-10 rounded-[12px] text-[16px]" id="vNextBtn" title="التالي">⏭️</button>
+              <button class="neo w-10 h-10 rounded-[12px] text-[15px]" id="vStopBtn" title="إيقاف">⏹️</button>
+            </div>
+            <div class="flex items-center gap-[10px] flex-wrap justify-center">
+              <label class="flex items-center gap-1 text-[12px] font-[700] text-dim">
+                🔊
+                <input type="range" id="vVol" min="0" max="1" step="0.03" value="0.95" style="width:84px; accent-color:var(--emerald)">
+              </label>
+              <select id="vSpeed" class="neo rounded-[10px] px-[9px] py-[7px] text-[12px] font-[700]" style="background:var(--glass); color:var(--text)">
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="1.75">1.75x</option>
+                <option value="2">2x</option>
+              </select>
+              <button class="neo px-[12px] py-[8px] rounded-[11px] text-[12.5px] font-[700]" id="vFsBtn">⛶ ملء الشاشة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3 text-[12px] text-dim flex flex-wrap gap-3 items-center justify-between">
+        <span>📁 <code id="vFilePath" style="color:var(--emerald)">assets/videos/001.mp4</code></span>
+        <span>💾 حفظ تلقائي للتقدم • MP4 H.264 أصلي بدون إعادة ترميز</span>
+      </div>
+    </div>
+
+    <!-- video search -->
+    <div class="glass rounded-[22px] p-[15px] md:p-[18px] mb-4">
+      <div class="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
+        <div class="flex-1 relative">
+          <span class="absolute top-1/2 -translate-y-1/2 text-[16px] text-dim" style="inset-inline-start:15px">🎬</span>
+          <input id="videoSearchInput" type="text" placeholder="ابحث في المرئيات: اسم السورة • الرقم"
+            class="w-full rounded-[14px] py-[13px] text-[14.5px] font-[500] outline-none"
+            style="padding-inline-start:44px; padding-inline-end:14px; background:rgba(255,255,255,.045); border:1px solid var(--glass-b); color:var(--text)">
+        </div>
+        <div class="text-[12px] text-dim font-[700] whitespace-nowrap px-1">
+          <span id="videoResultsCount">114</span> تلاوة مرئية
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3" id="videoFilters">
+        <button class="chip active" data-vfilter="all">الكل</button>
+        <button class="chip" data-vfilter="fav">❤️ مفضلة الفيديو</button>
+        <button class="chip" data-vfilter="available">📁 متوفر محلياً</button>
+        <button class="chip" data-vfilter="continue">⏯️ متابعة المشاهدة</button>
+      </div>
+    </div>
+
+    <!-- video grid -->
+    <div id="videoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] md:gap-[20px]"></div>
+    <div id="videoNoResults" class="hidden text-center py-16">
+      <div class="text-[40px] mb-2">🎞️</div>
+      <div class="font-bold">لا توجد تلاوات مرئية مطابقة</div>
+      <div class="text-dim text-[13px]">تأكد من وضع ملفات MP4 في <code>assets/videos/</code></div>
+    </div>
+  </section>
+
+  <!-- ============ AUDIO PLAYER VIEW ============ -->
+  <section id="view-player" class="view-section hidden">
+    <div class="glass rounded-[28px] p-6 md:p-10 max-w-[860px] mx-auto text-center fade-up">
+      <div class="offline-pill mx-auto mb-[10px] w-fit">🔒 OFFLINE • محلي بالكامل</div>
+      <div class="text-[12px] text-dim font-bold mb-1">المشغل المتقدم – منقى صوتياً</div>
+      <div class="quran-arabic text-[34px] md:text-[44px] font-[700] mb-2" id="playerBigName" style="color:var(--gold)">سورة الفاتحة</div>
+      <div class="text-dim text-[14px] mb-1" id="playerBigMeta">7 آيات • مكية</div>
+      <div class="text-[13.5px] font-[700] mb-5" style="color:var(--emerald)">الشيخ محمود سلمان الحلفاوي</div>
+
+      <div class="flex justify-center mb-6">
+        <div class="glass rounded-[22px] px-8 py-5 emerald-glow">
+          <div id="bigVisualizer" class="bars paused" style="height:44px; gap:5px">
+            <i style="width:4px;height:20px"></i><i style="width:4px;height:32px"></i><i style="width:4px;height:44px"></i><i style="width:4px;height:28px"></i><i style="width:4px;height:40px"></i><i style="width:4px;height:22px"></i><i style="width:4px;height:36px"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-2 max-w-[620px] mx-auto">
+        <input type="range" min="0" max="100" value="0" class="seek" id="playerSeekFull">
+        <div class="flex justify-between text-[12px] text-dim mt-1 font-semibold">
+          <span id="fullCurrentTime">00:00</span>
+          <span id="fullTotalTime">00:00</span>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-4 md:gap-7 mt-6 flex-wrap">
+        <button class="neo w-12 h-12 rounded-[16px] text-[18px]" id="btnPrevFull">⏮️</button>
+        <button class="neo w-12 h-12 rounded-[16px] text-[18px]" id="btnRW">⏪</button>
+        <button id="btnPlayFull" class="w-[74px] h-[74px] rounded-[24px] text-[30px] flex items-center justify-center"
+          style="background:linear-gradient(135deg, var(--gold), #ffc22e); color:#191204; box-shadow:0 10px 30px rgba(255,215,0,.27)">▶️</button>
+        <button class="neo w-12 h-12 rounded-[16px] text-[18px]" id="btnFW">⏩</button>
+        <button class="neo w-12 h-12 rounded-[16px] text-[18px]" id="btnNextFull">⏭️</button>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-5 mt-7 text-[13px] text-dim">
+        <label class="flex items-center gap-2 cursor-pointer font-[600]">🔊 <input type="range" id="volFull" min="0" max="1" step="0.02" value="0.95" style="width:120px; accent-color:var(--emerald)"></label>
+        <label class="flex items-center gap-2 cursor-pointer font-[600]"><input type="checkbox" id="autoNextFull" checked><span id="lblAutoNext">تشغيل تلقائي</span></label>
+        <button id="repeatBtn" class="chip">🔁 <span id="repeatLabel">إيقاف</span></button>
+        <button id="copyFilePathBtn" class="chip">📋 نسخ مسار الملف</button>
+      </div>
+
+      <div class="mt-6 text-[12px] text-dim glass rounded-[16px] py-[12px] px-[15px] max-w-[620px] mx-auto">
+        <div><b style="color:var(--gold)">ملف محلي:</b> <code id="currentFilePath" style="color:var(--emerald)">assets/audio/001.mp3</code></div>
+        <div class="mt-1" id="fileStatusLine">وضع أوفلاين – تشغيل مباشر بدون معالجة</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAVORITES ============ -->
+  <section id="view-favorites" class="view-section hidden">
+    <div class="mb-6">
+      <h2 class="text-[26px] font-[800] mb-1">❤️ <span data-i="favorites">المفضلة</span></h2>
+      <p class="text-dim text-[13.5px]">السور والتلاوات المرئية المحفوظة محلياً</p>
+      <div class="flex gap-2 mt-3 flex-wrap">
+        <button class="chip active" id="favTabAudio" data-favtab="audio">🔊 صوتي</button>
+        <button class="chip" id="favTabVideo" data-favtab="video">🎬 مرئي</button>
+      </div>
+    </div>
+    <div id="favoritesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px]"></div>
+    <div id="favVideoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] hidden"></div>
+    <div id="favEmpty" class="text-center py-20 hidden">
+      <div class="text-[44px] mb-3">💛</div>
+      <div class="font-bold text-[17px] mb-1" data-i="favEmptyTitle">لا توجد مفضلة بعد</div>
+      <div class="text-dim text-[13px]" data-i="favEmptyDesc">اضغط القلب على أي سورة أو فيديو</div>
+    </div>
+  </section>
+
+  <!-- ============ SETTINGS ============ -->
+  <section id="view-settings" class="view-section hidden">
+    <div class="mb-6">
+      <h2 class="text-[26px] font-[800] mb-1">⚙️ <span data-i="settings">الإعدادات – مكتبة أوفلاين</span></h2>
+      <p class="text-dim text-[13.5px]">إدارة ملفات التلاوة المحلية – الشيخ محمود سلمان الحلفاوي – صوت + فيديو</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-[16px] max-w-[1040px]">
+      <!-- audio library -->
+      <div class="glass rounded-[22px] p-[18px] md:col-span-2">
+        <div class="text-[14px] font-[800] mb-3">📁 مكتبة الصوت المحلية – <span style="color:var(--emerald)">Offline MP3</span></div>
+        <div class="text-[12.7px] text-dim leading-relaxed mb-3">
+          ضع ملفات MP3 المنقاة داخل: <code style="color:var(--gold)">assets/audio/001.mp3 … 114.mp3</code><br>
+          يدعم: <code>1.mp3 / 01.mp3 / 001.mp3 / surah-1.mp3</code>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="scanLibraryBtn" class="chip" style="background:rgba(0,200,150,.1); color:var(--emerald); border-color:rgba(0,200,150,.34)">🔎 فحص مكتبة الصوت</button>
+          <button id="mapFolderBtn" class="chip">📂 ربط مجلد صوتي</button>
+          <input id="folderInput" type="file" accept="audio/*" multiple class="hidden">
+          <button id="exportMapBtn" class="chip">⬇️ تصدير خريطة الملفات</button>
+        </div>
+        <div class="text-[12px] font-[700]">
+          ملفات صوت مكتشفة: <span id="libFound" style="color:var(--emerald)">0 / 114</span>
+          <span class="mx-2 text-dim">•</span>
+          مفقود: <span id="libMissing" style="color:#ff9a72">0</span>
+        </div>
+        <div id="libraryList" class="mt-3 max-h-[230px] overflow-y-auto text-[11.8px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[7px]"></div>
+      </div>
+
+      <!-- video library -->
+      <div class="glass rounded-[22px] p-[18px] md:col-span-2" style="border-color:rgba(0,200,150,.26)">
+        <div class="text-[14px] font-[800] mb-3">🎬 مكتبة الفيديو المحلية – <span style="color:var(--gold)">Offline MP4 H.264</span></div>
+        <div class="text-[12.7px] text-dim leading-relaxed mb-3">
+          ضع ملفات الفيديو المنقاة في: <code style="color:var(--gold)">assets/videos/001.mp4 … 114.mp4</code><br>
+          يدعم: <code>MP4 / H.264</code> • أسماء: <code>1.mp4 / 01.mp4 / 001.mp4 / surah-1.mp4</code> – تُشغّل كما هي بدون إعادة ترميز
+        </div>
+        <div class="flex flex-wrap gap-2 mb-3">
+          <button id="scanVideoBtn" class="chip" style="background:rgba(255,215,0,.09); color:var(--gold); border-color:rgba(255,215,0,.34)">🎞️ فحص مكتبة الفيديو</button>
+          <button id="mapVideoFolderBtn" class="chip">📂 ربط مجلد فيديو</button>
+          <input id="videoFolderInput" type="file" accept="video/mp4,video/*" multiple class="hidden">
+          <button id="exportVideoMapBtn" class="chip">⬇️ تصدير خريطة الفيديو</button>
+          <button id="clearVideoProgressBtn" class="chip" style="color:#ff9a72">🧹 مسح تقدم المشاهدة</button>
+        </div>
+        <div class="text-[12px] font-[700]">
+          ملفات فيديو مكتشفة: <span id="vLibFound" style="color:var(--gold)">0 / 114</span>
+          <span class="mx-2 text-dim">•</span>
+          مفقود: <span id="vLibMissing" style="color:#ff9a72">0</span>
+        </div>
+        <div id="videoLibraryList" class="mt-3 max-h-[230px] overflow-y-auto text-[11.8px] grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[7px]"></div>
+      </div>
+
+      <!-- language -->
+      <div class="glass rounded-[22px] p-[18px]">
+        <div class="text-[13px] font-[800] mb-3">🌐 <span data-i="language">اللغة</span></div>
+        <div class="grid grid-cols-2 gap-2 text-[13px] font-[700]">
+          <button class="chip text-center lang-opt" data-lang="ar">العربية</button>
+          <button class="chip text-center lang-opt" data-lang="en">English</button>
+          <button class="chip text-center lang-opt" data-lang="fr">Français</button>
+          <button class="chip text-center lang-opt" data-lang="tr">Türkçe</button>
+        </div>
+      </div>
+
+      <!-- audio prefs -->
+      <div class="glass rounded-[22px] p-[18px]">
+        <div class="text-[13px] font-[800] mb-3">🎧 إعدادات الصوت / الفيديو المنقى</div>
+        <label class="flex items-center gap-2 text-[13px] font-[600] mb-2">
+          <input type="checkbox" checked disabled>
+          <span>تعطيل أي معالجة – تشغيل خام نقي</span>
+        </label>
+        <label class="flex items-center gap-2 text-[13px] font-[600] mb-2">
+          <input type="checkbox" id="autoPlaySetting" checked>
+          <span data-i="autoplayNext">تشغيل السورة التالية تلقائياً</span>
+        </label>
+        <label class="flex items-center gap-2 text-[13px] font-[600]">
+          <input type="checkbox" id="savePositionSetting" checked>
+          <span data-i="savePosition">حفظ آخر موضع استماع / مشاهدة</span>
+        </label>
+      </div>
+
+      <!-- appearance -->
+      <div class="glass rounded-[22px] p-[18px]">
+        <div class="text-[13px] font-[800] mb-3">🎨 المظهر</div>
+        <div class="mb-3">
+          <label class="text-[12px] text-dim font-bold"><span data-i="textSize">حجم النص</span>: <span id="textSizeVal">16px</span></label>
+          <input type="range" id="textSizeSlider" min="13" max="22" value="16" class="w-full mt-2" style="accent-color:var(--gold)">
+        </div>
+        <select id="fontSelect" class="w-full rounded-[13px] py-[11px] px-3 text-[13px] font-bold" style="background:rgba(255,255,255,.045); border:1px solid var(--glass-b); color:var(--text)">
+          <option value="tajawal">Tajawal – حديث</option>
+          <option value="amiri">Amiri – تقليدي</option>
+          <option value="scheherazade">Scheherazade New</option>
+        </select>
+      </div>
+
+      <!-- data -->
+      <div class="glass rounded-[22px] p-[18px]">
+        <div class="text-[13px] font-[800] mb-3">🧹 <span data-i="data">البيانات المحلية</span></div>
+        <div class="text-[12.5px] text-dim mb-3" id="storageInfo">—</div>
+        <div class="flex flex-wrap gap-2">
+          <button id="clearCacheBtn" class="chip" style="color:#ff9270">🗑️ <span data-i="clearData">مسح البيانات</span></button>
+          <button id="exportFavBtn" class="chip">⬇️ <span data-i="export">تصدير المفضلة</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="glass rounded-[22px] p-[18px] mt-[18px] max-w-[1040px] text-[12.8px] leading-relaxed text-dim">
+      <b style="color:var(--gold)">دليل تثبيت الملفات (أوفلاين بالكامل):</b><br>
+      1) صورة الشيخ: <code style="color:var(--emerald)">assets/images/sheikh.jpg</code> – الشعار: <code style="color:var(--emerald)">assets/images/logo.png</code><br>
+      2) الصوت: <code style="color:var(--emerald)">assets/audio/001.mp3 … 114.mp3</code><br>
+      3) الفيديو: <code style="color:var(--emerald)">assets/videos/001.mp4 … 114.mp4</code> (MP4 / H.264)<br>
+      4) اختياري ثَمبنيلز: <code>assets/videos/thumbs/001.jpg</code><br>
+      5) افتح <code>index.html</code> – يعمل 100% بدون إنترنت. لا API • لا سيرفر • لا سحابة.
+    </div>
+  </section>
+
+</main>
+
+<!-- AUDIO PLAYER DOCK -->
+<div id="playerDock" class="player-dock glass" aria-live="polite">
+  <div class="p-[14px] md:p-[18px]">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-[14px] flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg, rgba(255,215,0,.16), rgba(0,200,150,.14)); border:1px solid rgba(255,215,0,.30)">
+        <div class="bars paused" id="dockVisualizer">
+          <i style="height:10px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:13px"></i><i style="height:20px"></i>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <div class="font-[800] text-[14px] truncate quran-arabic" id="dockTitle">—</div>
+        <div class="text-[11.5px] text-dim truncate" id="dockSub">الشيخ محمود سلمان الحلفاوي • Offline</div>
+      </div>
+      <div class="flex items-center gap-[7px]">
+        <button class="neo w-9 h-9 rounded-[11px] text-[15px]" id="dockPrev">⏮</button>
+        <button id="dockPlay" class="w-11 h-11 rounded-[14px] text-[18px] flex items-center justify-center" style="background:var(--gold); color:#1a1304; font-weight:900">▶</button>
+        <button class="neo w-9 h-9 rounded-[11px] text-[15px]" id="dockNext">⏭</button>
+      </div>
+    </div>
+    <div class="mt-[11px]">
+      <input type="range" min="0" max="100" value="0" id="dockSeek" class="seek">
+      <div class="flex justify-between text-[10.5px] text-dim mt-[4px] font-[600]">
+        <span id="dockCurrent">00:00</span>
+        <span id="dockTotal">00:00</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAB -->
+<button id="fabTop" class="fixed bottom-[100px]" style="inset-inline-end:20px; z-index:52; width:54px; height:54px; border-radius:18px; background:linear-gradient(145deg,#00C896,#00956f); color:#fff; font-size:20px; box-shadow:0 10px 28px rgba(0,200,150,.34); border:1px solid rgba(255,255,255,.18); cursor:pointer" title="للأعلى">⬆️</button>
+
+<!-- BOTTOM NAV - 6 items -->
+<nav class="bottom-nav glass" id="bottomNav">
+  <div class="bottom-nav-inner">
+    <div class="nav-item active" data-view="home">
+      <span class="nav-ico">🏠</span>
+      <span data-i="navHome">الرئيسية</span>
+    </div>
+    <div class="nav-item" data-view="home" data-scroll="surahs">
+      <span class="nav-ico">📖</span>
+      <span data-i="navSurahs">السور</span>
+    </div>
+    <div class="nav-item" data-view="videos">
+      <span class="nav-ico">🎬</span>
+      <span>المرئيات</span>
+    </div>
+    <div class="nav-item" data-view="player">
+      <span class="nav-ico">🎧</span>
+      <span data-i="navPlayer">المشغل</span>
+    </div>
+    <div class="nav-item" data-view="favorites">
+      <span class="nav-ico">❤️</span>
+      <span data-i="navFav">المفضلة</span>
+    </div>
+    <div class="nav-item" data-view="settings">
+      <span class="nav-ico">⚙️</span>
+      <span data-i="navSettings">الإعدادات</span>
+    </div>
+  </div>
+</nav>
+
+<audio id="qAudio" preload="metadata" crossorigin="anonymous"></audio>
+
+<script>
+/* ============================================================
+   القرآن الكريم منقى صوتياً ومرئياً
+   OFFLINE COMPLETE – Sheikh Mahmoud Salman Al-Halafawy
+   Audio: assets/audio/001.mp3 … 114.mp3
+   Video: assets/videos/001.mp4 … 114.mp4
+   No API • No server • 100% local
+   ============================================================ */
+
+const I18N = {
+  ar:{appTitle:"القرآن الكريم منقى صوتياً ومرئياً",searchPh:"ابحث: اسم السورة • بالإنجليزية • الرقم",surahWord:"سورة",favorites:"المفضلة",favoritesShort:"المفضلة",favDesc:"السور والتلاوات المحفوظة محلياً",favEmptyTitle:"لا توجد مفضلة بعد",favEmptyDesc:"اضغط القلب على أي سورة أو فيديو",settings:"الإعدادات",settingsDesc:"إدارة مكتبة أوفلاين",language:"اللغة",font:"الخط",textSize:"حجم النص",audioQuality:"جودة الصوت",autoplayNext:"تشغيل السورة التالية تلقائياً",savePosition:"حفظ آخر موضع استماع / مشاهدة",data:"البيانات المحلية",clearData:"مسح البيانات",export:"تصدير المفضلة",navHome:"الرئيسية",navSurahs:"السور",navPlayer:"المشغل",navFav:"المفضلة",navSettings:"الإعدادات",play:"تشغيل",pause:"إيقاف",stop:"توقف",download:"تحميل",ayahs:"آية",makki:"مكية",madani:"مدنية",loading:"جاري التحميل…",nowPlaying:"يتم التشغيل الآن",addedFav:"أضيفت للمفضلة",removedFav:"أزيلت من المفضلة",downloaded:"بدأ التنزيل",saved:"تم الحفظ",cleared:"تم مسح البيانات",copied:"تم النسخ",
+    videos:"المرئيات", videoFav:"مفضلة الفيديو", resumeVideo:"استكمال الفيديو", videoQuality:"MP4 H.264"},
+  en:{appTitle:"Quran – Offline Enhanced Audio + Video",searchPh:"Search surah, English, or number…",surahWord:"surahs",favorites:"Favorites",favoritesShort:"Favorites",favDesc:"Locally saved",favEmptyTitle:"No favorites yet",favEmptyDesc:"Tap heart to add",settings:"Settings",settingsDesc:"Offline library",language:"Language",font:"Font",textSize:"Text size",audioQuality:"Audio quality",autoplayNext:"Auto play next",savePosition:"Save position",data:"Local data",clearData:"Clear data",export:"Export favorites",navHome:"Home",navSurahs:"Surahs",navPlayer:"Player",navFav:"Favorites",navSettings:"Settings",play:"Play",pause:"Pause",stop:"Stop",download:"Download",ayahs:"ayahs",makki:"Meccan",madani:"Medinan",loading:"Loading…",nowPlaying:"Now playing",addedFav:"Added to favorites",removedFav:"Removed",downloaded:"Download started",saved:"Saved",cleared:"Data cleared",copied:"Copied",
+    videos:"Videos", videoFav:"Video favorites", resumeVideo:"Resume video", videoQuality:"MP4 H.264"},
+  fr:{appTitle:"Coran – Audio + Vidéo Hors Ligne",searchPh:"Rechercher sourate…",surahWord:"sourates",favorites:"Favoris",favoritesShort:"Favoris",favDesc:"Sourates locales",favEmptyTitle:"Aucun favori",favEmptyDesc:"Appuyez cœur",settings:"Paramètres",settingsDesc:"Bibliothèque hors ligne",language:"Langue",font:"Police",textSize:"Taille",audioQuality:"Qualité",autoplayNext:"Lecture auto",savePosition:"Sauvegarder position",data:"Données",clearData:"Effacer",export:"Exporter",navHome:"Accueil",navSurahs:"Sourates",navPlayer:"Lecteur",navFav:"Favoris",navSettings:"Réglages",play:"Lire",pause:"Pause",stop:"Stop",download:"Télécharger",ayahs:"versets",makki:"Mecquoise",madani:"Médinoise",loading:"Chargement…",nowPlaying:"Lecture",addedFav:"Ajouté",removedFav:"Retiré",downloaded:"Téléchargement",saved:"Enregistré",cleared:"Effacé",copied:"Copié",
+    videos:"Vidéos", videoFav:"Favoris vidéo", resumeVideo:"Reprendre vidéo", videoQuality:"MP4 H.264"},
+  tr:{appTitle:"Kur’an – Çevrimdışı Ses + Video",searchPh:"Sure ara…",surahWord:"sure",favorites:"Favoriler",favoritesShort:"Favoriler",favDesc:"Yerel kayıtlı",favEmptyTitle:"Favori yok",favEmptyDesc:"Kalbe dokun",settings:"Ayarlar",settingsDesc:"Çevrimdışı kütüphane",language:"Dil",font:"Yazı",textSize:"Metin boyutu",audioQuality:"Ses kalitesi",autoplayNext:"Otomatik sonraki",savePosition:"Konumu kaydet",data:"Yerel veri",clearData:"Temizle",export:"Dışa aktar",navHome:"Ana Sayfa",navSurahs:"Sureler",navPlayer:"Çalar",navFav:"Favoriler",navSettings:"Ayarlar",play:"Oynat",pause:"Duraklat",stop:"Durdur",download:"İndir",ayahs:"ayet",makki:"Mekkî",madani:"Medenî",loading:"Yükleniyor…",nowPlaying:"Çalıyor",addedFav:"Eklendi",removedFav:"Kaldırıldı",downloaded:"İndirme başladı",saved:"Kaydedildi",cleared:"Temizlendi",copied:"Kopyalandı",
+    videos:"Videolar", videoFav:"Video favorileri", resumeVideo:"Videoya devam", videoQuality:"MP4 H.264"}
+};
+
+/* ---- 114 Surah metadata (offline) ---- */
+const SURAH_AR = ["الفاتحة","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود","يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون","النور","الفرقان","الشعراء","النمل","القصص","العنكبوت","الروم","لقمان","السجدة","الأحزاب","سبأ","فاطر","يس","الصافات","ص","الزمر","غافر","فصلت","الشورى","الزخرف","الدخان","الجاثية","الأحقاف","محمد","الفتح","الحجرات","ق","الذاريات","الطور","النجم","القمر","الرحمن","الواقعة","الحديد","المجادلة","الحشر","الممتحنة","الصف","الجمعة","المنافقون","التغابن","الطلاق","التحريم","الملك","القلم","الحاقة","المعارج","نوح","الجن","المزمل","المدثر","القيامة","الإنسان","المرسلات","النبأ","النازعات","عبس","التكوير","الانفطار","المطففين","الانشقاق","البروج","الطارق","الأعلى","الغاشية","الفجر","البلد","الشمس","الليل","الضحى","الشرح","التين","العلق","القدر","البينة","الزلزلة","العاديات","القارعة","التكاثر","العصر","الهمزة","الفيل","قريش","الماعون","الكوثر","الكافرون","النصر","المسد","الإخلاص","الفلق","الناس"];
+const SURAH_EN = ["Al-Faatiha","Al-Baqara","Aal-i-Imraan","An-Nisaa","Al-Maaida","Al-An'aam","Al-A'raaf","Al-Anfaal","At-Tawba","Yunus","Hud","Yusuf","Ar-Ra'd","Ibrahim","Al-Hijr","An-Nahl","Al-Israa","Al-Kahf","Maryam","Taa-Haa","Al-Anbiyaa","Al-Hajj","Al-Muminoon","An-Noor","Al-Furqaan","Ash-Shu'araa","An-Naml","Al-Qasas","Al-Ankaboot","Ar-Room","Luqman","As-Sajda","Al-Ahzaab","Saba","Fatir","Yaseen","As-Saaffaat","Saad","Az-Zumar","Ghafir","Fussilat","Ash-Shura","Az-Zukhruf","Ad-Dukhaan","Al-Jaathiya","Al-Ahqaf","Muhammad","Al-Fath","Al-Hujuraat","Qaaf","Adh-Dhaariyat","At-Tur","An-Najm","Al-Qamar","Ar-Rahmaan","Al-Waaqia","Al-Hadid","Al-Mujaadila","Al-Hashr","Al-Mumtahana","As-Saff","Al-Jumu'a","Al-Munaafiqoon","At-Taghaabun","At-Talaaq","At-Tahrim","Al-Mulk","Al-Qalam","Al-Haaqqa","Al-Ma'aarij","Nooh","Al-Jinn","Al-Muzzammil","Al-Muddaththir","Al-Qiyaama","Al-Insaan","Al-Mursalaat","An-Naba","An-Naazi'aat","Abasa","At-Takwir","Al-Infitaar","Al-Mutaffifin","Al-Inshiqaaq","Al-Burooj","At-Taariq","Al-A'laa","Al-Ghaashiya","Al-Fajr","Al-Balad","Ash-Shams","Al-Lail","Ad-Dhuhaa","Ash-Sharh","At-Tin","Al-Alaq","Al-Qadr","Al-Bayyina","Az-Zalzala","Al-Aadiyaat","Al-Qaari'a","At-Takaathur","Al-Asr","Al-Humaza","Al-Fil","Quraish","Al-Maa'un","Al-Kawthar","Al-Kaafiroon","An-Nasr","Al-Masad","Al-Ikhlaas","Al-Falaq","An-Naas"];
+const SURAH_FR = ["L'Ouverture","La Vache","La Famille d'Imran","Les Femmes","La Table Servie","Les Bestiaux","Les Murailles","Le Butin","Le Repentir","Jonas","Hud","Joseph","Le Tonnerre","Abraham","Al-Hijr","Les Abeilles","Le Voyage Nocturne","La Caverne","Marie","Ta-Ha","Les Prophètes","Le Pèlerinage","Les Croyants","La Lumière","Le Discernement","Les Poètes","Les Fourmis","Le Récit","L'Araignée","Les Romains","Luqman","La Prosternation","Les Coalisés","Saba","Le Créateur","Ya-Sin","Les Rangés","Sad","Les Groupes","Le Pardonneur","Les Versets Détaillés","La Consultation","L'Ornement","La Fumée","L'Agenouillée","Al-Ahqaf","Muhammad","La Victoire","Les Appartements","Qaf","Qui Éparpillent","At-Tur","L'Étoile","La Lune","Le Tout Miséricordieux","L'Événement","Le Fer","La Discussion","L'Exode","L'Éprouvée","Le Rang","Le Vendredi","Les Hypocrites","La Grande Perte","Le Divorce","L'Interdiction","La Royauté","La Plume","Celle qui montre la vérité","Les Voies d'Ascension","Noé","Les Djinns","L'Enveloppé","Le Revêtu d'un manteau","La Résurrection","L'Homme","Les Envoyés","La Nouvelle","Les Anges qui arrachent","Il s'est renfrogné","L'Obscurcissement","La Rupture","Les Fraudeurs","La Déchirure","Les Constellations","L'Astre Nocturne","Le Très-Haut","L'Enveloppante","L'Aube","La Cité","Le Soleil","La Nuit","Le Jour Montant","L'Épanouissement","Le Figuier","L'Adhérence","La Destinée","La Preuve","La Secousse","Les Coursiers","Le Fracas","La Course aux richesses","Le Temps","Les Calomniateurs","L'Éléphant","Coraïsh","L'Ustensile","L'Abondance","Les Infidèles","Le Secours","Les Fibres","Le Monothéisme pur","L'Aube naissante","Les Hommes"];
+const SURAH_TR = ["Fâtiha","Bakara","Âl-i İmrân","Nisâ","Mâide","En'âm","A'râf","Enfâl","Tevbe","Yûnus","Hûd","Yûsuf","Ra'd","İbrahim","Hicr","Nahl","İsrâ","Kehf","Meryem","Tâhâ","Enbiyâ","Hac","Mü'minûn","Nûr","Furkân","Şuarâ","Neml","Kasas","Ankebût","Rûm","Lokmân","Secde","Ahzâb","Sebe'","Fâtır","Yâsîn","Sâffât","Sâd","Zümer","Mü'min","Fussilet","Şûrâ","Zuhruf","Duhân","Câsiye","Ahkâf","Muhammed","Fetih","Hucurât","Kâf","Zâriyât","Tûr","Necm","Kamer","Rahmân","Vâkıa","Hadîd","Mücâdele","Haşr","Mümtehine","Saff","Cum'a","Münâfikûn","Teğâbün","Talâk","Tahrîm","Mülk","Kalem","Hâkka","Meâric","Nûh","Cin","Müzzemmil","Müddessir","Kıyâme","İnsân","Mürselât","Nebe'","Nâziât","Abese","Tekvîr","İnfitâr","Mutaffifîn","İnşikâk","Bürûc","Târık","A'lâ","Ğâşiye","Fecr","Beled","Şems","Leyl","Duhâ","İnşirâh","Tîn","Alak","Kadir","Beyyine","Zilzâl","Âdiyât","Kâria","Tekâsür","Asr","Hümeze","Fîl","Kureyş","Mâûn","Kevser","Kâfirûn","Nasr","Tebbet","İhlâs","Felak","Nâs"];
+const AYAHS = [7,286,200,176,120,165,206,75,129,109,123,111,43,52,99,128,111,110,98,135,112,78,118,64,77,227,93,88,69,60,34,30,73,54,45,83,182,88,75,85,54,53,89,59,37,35,38,29,18,45,60,49,62,55,78,96,29,22,24,13,14,11,11,18,12,12,30,52,52,44,28,28,20,56,40,31,50,40,46,42,29,19,36,25,22,17,19,26,30,20,15,21,11,8,8,19,5,8,8,11,11,8,3,9,5,4,7,3,6,3,5,4,5,6];
+const REVELATION = ["Meccan","Medinan","Medinan","Medinan","Medinan","Meccan","Meccan","Medinan","Medinan","Meccan","Meccan","Meccan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Meccan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Medinan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Meccan","Medinan","Medinan","Medinan","Medinan","Medinan","Medinan","Medinan","Medinan","Medinan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Medinan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Meccan","Medinan","Meccan","Meccan","Meccan","Meccan"];
+
+const SURAHS = SURAH_AR.map((ar,i)=>({
+  number:i+1,
+  nameAr:'سورة ' + ar,
+  nameEn:SURAH_EN[i],
+  nameFr:SURAH_FR[i],
+  nameTr:SURAH_TR[i],
+  ayahs: AYAHS[i],
+  revelation: REVELATION[i]
+}));
+
+// --- State ---
+const RECITER = {
+  id:'halafawy',
+  ar:'الشيخ محمود سلمان الحلفاوي',
+  en:'Sheikh Mahmoud Salman Al-Halafawy',
+  fr:'Cheikh Mahmoud Salman Al-Halafawy',
+  tr:'Şeyh Mahmud Salman el-Halfavi',
+  audioFolder:'assets/audio',
+  videoFolder:'assets/videos',
+  image:'assets/images/sheikh.jpg'
+};
+
+let state = {
+  lang: localStorage.getItem('qq_lang') || 'ar',
+  theme: localStorage.getItem('qq_theme') || 'dark',
+  favorites: JSON.parse(localStorage.getItem('qq_favs')||'[]'),
+  videoFavorites: JSON.parse(localStorage.getItem('qq_vfavs')||'[]'),
+  autoNext: (localStorage.getItem('qq_autonext') ?? 'true')==='true',
+  savePos: (localStorage.getItem('qq_savepos') ?? 'true')==='true',
+  textSize: parseInt(localStorage.getItem('qq_textsize')||'16',10),
+  font: localStorage.getItem('qq_font')||'tajawal',
+  surahs: SURAHS,
+  filtered: [...SURAHS],
+  videoFiltered: [...SURAHS],
+  currentSurah: null,
+  currentVideo: null,
+  isPlaying:false,
+  isVideoPlaying:false,
+  repeatMode:0,
+  available:{},
+  videoAvailable:{},
+  fileMap: JSON.parse(localStorage.getItem('qq_filemap')||'{}'),
+  videoFileMap: {}
+};
+
+const $ = s=>document.querySelector(s);
+const $$ = s=>[...document.querySelectorAll(s)];
+function t(k){ return (I18N[state.lang] && I18N[state.lang][k]) || I18N.ar[k] || k; }
+function toast(msg, icon='✨'){
+  const wrap=$('#toastWrap'); const el=document.createElement('div');
+  el.className='toast glass'; el.innerHTML=`<span>${icon}</span><span>${msg}</span>`;
+  wrap.appendChild(el);
+  setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(-8px)'; setTimeout(()=>el.remove(),280)}, 2700);
+}
+
+/* ========== AUDIO PATHS ========== */
+function audioCandidates(num){
+  const n=num; const p2=String(n).padStart(2,'0'); const p3=String(n).padStart(3,'0');
+  const base=RECITER.audioFolder;
+  const custom = state.fileMap[n];
+  const list = [];
+  if(custom) list.push(custom);
+  list.push(`${base}/${p3}.mp3`,`${base}/${p2}.mp3`,`${base}/${n}.mp3`,`${base}/surah-${n}.mp3`,`${base}/surah_${p3}.mp3`);
+  return [...new Set(list)];
+}
+let acIdx=0, acList=[];
+function tryLoadAudio(num){
+  acList = audioCandidates(num); acIdx=0;
+  return loadNextAudio();
+}
+function loadNextAudio(){
+  if(acIdx >= acList.length) return Promise.reject('no file');
+  const url = acList[acIdx++];
+  return new Promise((res, rej)=>{
+    const a=new Audio(); a.preload='metadata';
+    a.onloadedmetadata=()=>res(url);
+    a.onerror=()=> loadNextAudio().then(res).catch(rej);
+    a.src=url;
+  });
+}
+
+/* ========== VIDEO PATHS ========== */
+function videoCandidates(num){
+  const n=num; const p2=String(n).padStart(2,'0'); const p3=String(n).padStart(3,'0');
+  const base=RECITER.videoFolder;
+  const custom = state.videoFileMap[n];
+  const list=[];
+  if(custom) list.push(custom);
+  list.push(
+    `${base}/${p3}.mp4`,
+    `${base}/${p2}.mp4`,
+    `${base}/${n}.mp4`,
+    `${base}/surah-${n}.mp4`,
+    `${base}/surah_${p3}.mp4`,
+    `${base}/${p3}.webm`
+  );
+  return [...new Set(list)];
+}
+let vcIdx=0, vcList=[];
+function tryLoadVideo(num){
+  vcList = videoCandidates(num); vcIdx=0;
+  return loadNextVideoCandidate();
+}
+function loadNextVideoCandidate(){
+  if(vcIdx >= vcList.length) return Promise.reject('no video');
+  const url = vcList[vcIdx++];
+  return new Promise((resolve, reject)=>{
+    const v=document.createElement('video');
+    v.preload='metadata'; v.muted=true;
+    v.onloadedmetadata=()=> resolve(url);
+    v.onerror=()=> loadNextVideoCandidate().then(resolve).catch(reject);
+    v.src=url;
+  });
+}
+function thumbCandidates(num){
+  const p3=String(num).padStart(3,'0');
+  return [
+    `assets/videos/thumbs/${p3}.jpg`,
+    `assets/videos/thumbs/${num}.jpg`,
+    RECITER.image
+  ];
+}
+
+/* ========== HELPERS ========== */
+function getSurahDisplayName(s){
+  if(state.lang==='ar') return s.nameAr;
+  if(state.lang==='fr') return s.nameFr;
+  if(state.lang==='tr') return s.nameTr;
+  return s.nameEn;
+}
+function revelationLabel(rv){
+  const map={ar:{Meccan:'مكية',Medinan:'مدنية'}, en:{Meccan:'Meccan',Medinan:'Medinan'}, fr:{Meccan:'Mecquoise',Medinan:'Médinoise'}, tr:{Meccan:'Mekkî',Medinan:'Medenî'}};
+  return (map[state.lang]||map.ar)[rv]||rv;
+}
+function toArabicNum(n){ const ar=['٠','١','٢','٣','٤','٥','٦','٧','٨','٩']; return String(n).split('').map(d=>ar[+d]??d).join(''); }
+function fmtTime(s){ if(!isFinite(s)) return '00:00'; s=Math.floor(s); const m=Math.floor(s/60); const sec=s%60; return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+
+/* ========== AUDIO RENDER ========== */
+function renderSurahs(){
+  const grid=$('#surahGrid'); const list=state.filtered;
+  $('#resultsCount').textContent = state.lang==='ar' ? toArabicNum(list.length) : list.length;
+  $('#noResults').classList.toggle('hidden', list.length>0);
+  grid.innerHTML = list.map(s=>{
+    const isFav = state.favorites.includes(s.number);
+    const isCurrent = state.currentSurah && state.currentSurah.number===s.number;
+    const available = state.available[s.number];
+    return `<article class="surah-card glass rounded-[22px] p-[16px] fade-up ${isCurrent&&state.isPlaying?'playing':''}">
+      <div class="flex items-start gap-[13px]">
+        <div class="surah-num">${s.number}</div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <h3 class="quran-arabic text-[20px] md:text-[22px] font-[700] leading-tight">${getSurahDisplayName(s)}</h3>
+              <div class="text-[12.4px] text-dim mt-[3px]">${s.nameEn}</div>
+            </div>
+            <button class="fav-btn neo w-9 h-9 rounded-[11px] flex items-center justify-center text-[15px]" data-fav="${s.number}">${isFav?'❤️':'🤍'}</button>
+          </div>
+          <div class="flex items-center gap-2 mt-[10px] text-[11.4px] font-[700] flex-wrap">
+            <span class="px-[9px] py-[4px] rounded-full" style="background:rgba(0,200,150,.10); color:var(--emerald); border:1px solid rgba(0,200,150,.22)">${s.ayahs} ${t('ayahs')}</span>
+            <span class="px-[9px] py-[4px] rounded-full" style="background:rgba(255,215,0,.07); color:var(--gold); border:1px solid rgba(255,215,0,.2)">${revelationLabel(s.revelation)}</span>
+            <span class="file-badge ${available===true?'file-ok':available===false?'file-miss':''}" style="${available==null?'opacity:.66':''}">${available===true?'📁 موجود':available===false?'⚠️ غير مكتشف':'• محلي'}</span>
+          </div>
+          <div class="grid grid-cols-3 gap-[8px] mt-[13px]">
+            <button class="play-btn neo py-[10px] rounded-[12px] text-[12.7px] font-[800] col-span-2" data-play="${s.number}" style="${isCurrent&&state.isPlaying?'background:linear-gradient(135deg,rgba(0,200,150,.16),rgba(0,200,150,.07));color:var(--emerald);border-color:rgba(0,200,150,.38)':''}">${isCurrent&&state.isPlaying?'⏸️ '+t('pause'):'▶️ '+t('play')}</button>
+            <button class="dl-btn neo py-[10px] rounded-[12px] text-[13px]" data-dl="${s.number}" title="نسخ المسار">📋</button>
+          </div>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+  grid.querySelectorAll('.play-btn').forEach(b=> b.onclick=()=> playSurah(parseInt(b.dataset.play)));
+  grid.querySelectorAll('.fav-btn').forEach(b=> b.onclick=e=>{ e.stopPropagation(); toggleFav(parseInt(b.dataset.fav)); });
+  grid.querySelectorAll('.dl-btn').forEach(b=> b.onclick=()=> copyAudioPath(parseInt(b.dataset.dl)));
+}
+function copyAudioPath(num){ const p=audioCandidates(num)[0]; navigator.clipboard?.writeText(p); toast('📋 '+p,'✅'); const cf=$('#currentFilePath'); if(cf) cf.textContent=p; }
+
+/* ========== VIDEO RENDER ========== */
+function renderVideos(){
+  const grid = $('#videoGrid');
+  const list = state.videoFiltered;
+  $('#videoResultsCount').textContent = list.length;
+  $('#videoNoResults').classList.toggle('hidden', list.length>0);
+  grid.innerHTML = list.map(s=>{
+    const isFav = state.videoFavorites.includes(s.number);
+    const available = state.videoAvailable[s.number];
+    const progress = parseFloat(localStorage.getItem('vpos_'+s.number)||'0');
+    const durationHint = localStorage.getItem('vdur_'+s.number);
+    const thumb = thumbCandidates(s.number)[0];
+    const progPct = durationHint ? Math.min(100, Math.round((progress / parseFloat(durationHint)) * 100)) : 0;
+    return `<article class="video-card glass rounded-[22px] p-[14px] fade-up">
+      <div class="video-thumb mb-[12px]" style="cursor:pointer" data-vplay="${s.number}">
+        <img src="${thumb}" alt="${getSurahDisplayName(s)}" loading="lazy" onerror="this.src='${RECITER.image}'" />
+        <div class="vt-overlay"></div>
+        <div class="vt-number">${s.number}</div>
+        <div class="vt-play">▶</div>
+        <div class="vt-duration">${durationHint ? fmtTime(durationHint) : 'MP4'}</div>
+        ${progress>4 ? `<div style="position:absolute; bottom:0; left:0; right:0; height:4px; background:rgba(255,255,255,.18)"><div style="height:100%; width:${progPct}%; background:linear-gradient(90deg,var(--emerald),var(--gold))"></div></div>`:''}
+      </div>
+      <div class="flex items-start justify-between gap-2">
+        <div class="flex-1 min-w-0">
+          <div class="quran-arabic text-[18px] md:text-[20px] font-[700] truncate">${getSurahDisplayName(s)}</div>
+          <div class="text-[12px] text-dim truncate">${s.nameEn} • ${s.ayahs} ${t('ayahs')}</div>
+          <div class="text-[11.5px] mt-[3px]" style="color:var(--emerald); font-weight:700">الشيخ محمود سلمان الحلفاوي</div>
+        </div>
+        <button class="v-fav-btn neo w-9 h-9 rounded-[11px] flex items-center justify-center text-[15px]" data-vfav="${s.number}">${isFav?'❤️':'🤍'}</button>
+      </div>
+      <div class="flex items-center gap-2 mt-[11px] text-[11px] font-[700] flex-wrap">
+        <span class="px-[8px] py-[3px] rounded-full" style="background:rgba(255,215,0,.08); color:var(--gold); border:1px solid rgba(255,215,0,.2)">${revelationLabel(s.revelation)}</span>
+        <span class="file-badge ${available===true?'file-ok':available===false?'file-miss':''}" style="${available==null?'opacity:.7':''}">${available===true?'🎬 MP4 موجود':available===false?'⚠️ غير مكتشف':'• محلي MP4'}</span>
+        ${progress>4?`<span class="file-badge file-ok">⏱️ ${fmtTime(progress)}</span>`:''}
+      </div>
+      <div class="grid grid-cols-3 gap-[8px] mt-[12px]">
+        <button class="v-play-btn neo py-[10px] rounded-[12px] text-[12.6px] font-[800] col-span-2" data-vplay="${s.number}">▶️ تشغيل مرئي</button>
+        <button class="neo py-[10px] rounded-[12px] text-[13px]" onclick="copyVideoPath(${s.number})" title="نسخ مسار">📋</button>
+      </div>
+    </article>`;
+  }).join('');
+  grid.querySelectorAll('[data-vplay]').forEach(el=> el.onclick = ()=> playVideo(parseInt(el.dataset.vplay)));
+  grid.querySelectorAll('.v-fav-btn').forEach(b=> b.onclick = e=> { e.stopPropagation(); toggleVideoFav(parseInt(b.dataset.vfav)); });
+}
+function copyVideoPath(num){ const p=videoCandidates(num)[0]; navigator.clipboard?.writeText(p); toast('📋 '+p,'✅'); const vp=$('#vFilePath'); if(vp) vp.textContent=p; }
+
+/* ========== AUDIO PLAYER ========== */
+const audio = $('#qAudio'); audio.volume=0.95;
+async function playSurah(num, resumePos=null){
+  const s = state.surahs.find(x=>x.number===num); if(!s) return;
+  state.currentSurah = s; updateAudioUI(); openDock();
+  try{
+    const url = await tryLoadAudio(num);
+    if(audio.src !== url){ audio.src = url; audio.load(); }
+    state.available[num]=true;
+    const cfp=$('#currentFilePath'); if(cfp) cfp.textContent=url;
+    await audio.play(); state.isPlaying=true;
+    if(resumePos==null && state.savePos){
+      const p=parseFloat(localStorage.getItem('pos_'+num)||'0');
+      if(p>3 && p < (audio.duration||9999)-6) audio.currentTime=p;
+    } else if(resumePos!=null) audio.currentTime=resumePos;
+    saveLastAudio();
+    toast(t('nowPlaying')+': '+getSurahDisplayName(s),'🎶');
+  }catch(e){
+    state.available[num]=false;
+    toast('الملف الصوتي غير موجود محلياً','⚠️');
+    state.isPlaying=false;
+  }
+  updateAudioUI(); renderSurahs();
+}
+function pauseResume(){ if(!state.currentSurah) return; if(audio.paused){ audio.play(); state.isPlaying=true } else { audio.pause(); state.isPlaying=false } updateAudioUI(); renderSurahs(); }
+function stopAudio(){ audio.pause(); audio.currentTime=0; state.isPlaying=false; updateAudioUI(); renderSurahs(); }
+function nextSurah(){ if(!state.currentSurah) return; let n=state.currentSurah.number+1; if(n>114)n=1; playSurah(n); }
+function prevSurah(){ if(!state.currentSurah) return; let n=state.currentSurah.number-1; if(n<1)n=114; playSurah(n); }
+function updateAudioUI(){
+  const s=state.currentSurah; const name=s?getSurahDisplayName(s):'—';
+  $('#dockTitle').textContent=name;
+  $('#dockSub').textContent = s ? `${s.ayahs} ${t('ayahs')} • الشيخ محمود سلمان الحلفاوي • Offline` : 'اختر سورة للبدء';
+  $('#dockPlay').textContent = state.isPlaying ? '⏸' : '▶';
+  const pbn=$('#playerBigName'); if(pbn) pbn.textContent=name;
+  const pbm=$('#playerBigMeta'); if(pbm && s) pbm.textContent = `${s.ayahs} ${t('ayahs')} • ${revelationLabel(s.revelation)}`;
+  const bpf=$('#btnPlayFull'); if(bpf) bpf.textContent = state.isPlaying ? '⏸️' : '▶️';
+  const v1=$('#dockVisualizer'); if(v1) v1.classList.toggle('paused', !state.isPlaying);
+  const v2=$('#bigVisualizer'); if(v2) v2.classList.toggle('paused', !state.isPlaying);
+}
+function openDock(){ $('#playerDock').classList.add('open'); }
+audio.addEventListener('play', ()=>{ state.isPlaying=true; updateAudioUI(); });
+audio.addEventListener('pause', ()=>{ state.isPlaying=false; updateAudioUI(); });
+audio.addEventListener('timeupdate', ()=>{
+  if(!audio.duration) return;
+  const pct=(audio.currentTime/audio.duration)*100;
+  ['#dockSeek','#playerSeekFull'].forEach(sel=>{ const el=$(sel); if(el){ el.value=pct; el.style.setProperty('--p', pct+'%'); }});
+  $('#dockCurrent').textContent=fmtTime(audio.currentTime);
+  const fct=$('#fullCurrentTime'); if(fct) fct.textContent=fmtTime(audio.currentTime);
+  $('#dockTotal').textContent=fmtTime(audio.duration);
+  const ftt=$('#fullTotalTime'); if(ftt) ftt.textContent=fmtTime(audio.duration);
+  if(state.savePos && state.currentSurah && Math.floor(audio.currentTime)%4===0){
+    localStorage.setItem('pos_'+state.currentSurah.number, audio.currentTime);
+  }
+});
+audio.addEventListener('ended', ()=>{ if(state.repeatMode===1){ audio.currentTime=0; audio.play(); return; } if(state.autoNext){ nextSurah(); } else { state.isPlaying=false; updateAudioUI(); renderSurahs(); } });
+audio.addEventListener('error', ()=>{ loadNextAudio().then(url=>{ audio.src=url; audio.play().catch(()=>{}); }).catch(()=>{ state.isPlaying=false; updateAudioUI(); toast('تعذر تشغيل الملف المحلي','⚠️'); }); });
+
+/* ========== VIDEO PLAYER ========== */
+const vPlayer = $('#vPlayer');
+let vCurrentNum = null;
+async function playVideo(num){
+  const s = state.surahs.find(x=>x.number===num); if(!s) return;
+  state.currentVideo = s; vCurrentNum = num;
+  showView('videos');
+  const box = $('#videoPlayerBox'); box.classList.remove('hidden');
+  box.scrollIntoView({behavior:'smooth', block:'start'});
+  $('#vpTitle').textContent = getSurahDisplayName(s) + ' – تلاوة مرئية';
+  $('#vpSub').textContent = 'الشيخ محمود سلمان الحلفاوي • Offline MP4 H.264';
+  try{
+    const url = await tryLoadVideo(num);
+    state.videoAvailable[num]=true;
+    if(vPlayer.src !== url){ vPlayer.src = url; vPlayer.load(); }
+    $('#vFilePath').textContent = url;
+    // resume?
+    const savedPos = parseFloat(localStorage.getItem('vpos_'+num)||'0');
+    if(savedPos>3){
+      vPlayer.currentTime = savedPos;
+      toast('استئناف من '+fmtTime(savedPos), '⏯️');
+    }
+    await vPlayer.play();
+    state.isVideoPlaying = true;
+    updateVideoUI();
+    saveLastVideo(num);
+  }catch(e){
+    state.videoAvailable[num]=false;
+    toast('ملف الفيديو غير موجود محلياً في assets/videos/','⚠️');
+    renderVideos();
+  }
+}
+function updateVideoUI(){
+  $('#vPlayBtn').textContent = state.isVideoPlaying ? '⏸️' : '▶️';
+}
+vPlayer.addEventListener('play', ()=>{ state.isVideoPlaying=true; updateVideoUI(); });
+vPlayer.addEventListener('pause', ()=>{ state.isVideoPlaying=false; updateVideoUI(); });
+vPlayer.addEventListener('timeupdate', ()=>{
+  if(!vPlayer.duration) return;
+  const pct = (vPlayer.currentTime / vPlayer.duration) * 100;
+  const vs = $('#vSeek'); if(vs){ vs.value = pct; vs.style.setProperty('--pv', pct+'%'); }
+  $('#vCurrent').textContent = fmtTime(vPlayer.currentTime);
+  $('#vDuration').textContent = fmtTime(vPlayer.duration);
+  // save progress
+  if(vCurrentNum && Math.floor(vPlayer.currentTime)%3===0){
+    localStorage.setItem('vpos_'+vCurrentNum, vPlayer.currentTime);
+    localStorage.setItem('vdur_'+vCurrentNum, vPlayer.duration);
+    localStorage.setItem('qq_vlast', JSON.stringify({num:vCurrentNum, pos:vPlayer.currentTime, t:Date.now()}));
+  }
+});
+vPlayer.addEventListener('ended', ()=>{
+  if(state.autoNext && vCurrentNum){ // auto next video
+    let n = vCurrentNum+1; if(n>114) n=1; playVideo(n);
+  } else {
+    state.isVideoPlaying=false; updateVideoUI();
+  }
+});
+vPlayer.addEventListener('loadedmetadata', ()=>{
+  $('#vDuration').textContent = fmtTime(vPlayer.duration);
+  if(vCurrentNum) localStorage.setItem('vdur_'+vCurrentNum, vPlayer.duration);
+});
+// video controls
+$('#vPlayBtn').onclick = ()=>{ if(vPlayer.paused) vPlayer.play(); else vPlayer.pause(); };
+$('#vStopBtn').onclick = ()=>{ vPlayer.pause(); vPlayer.currentTime=0; };
+$('#vBack10').onclick = ()=> vPlayer.currentTime = Math.max(0, vPlayer.currentTime-10);
+$('#vFwd10').onclick = ()=> vPlayer.currentTime = Math.min((vPlayer.duration||0)-0.2, vPlayer.currentTime+10);
+$('#vPrevBtn').onclick = ()=> { if(vCurrentNum){ let n=vCurrentNum-1; if(n<1)n=114; playVideo(n);} };
+$('#vNextBtn').onclick = ()=> { if(vCurrentNum){ let n=vCurrentNum+1; if(n>114)n=1; playVideo(n);} };
+$('#vSeek').addEventListener('input', e=>{ if(vPlayer.duration) vPlayer.currentTime = (e.target.value/100)*vPlayer.duration; });
+$('#vVol').addEventListener('input', e=> vPlayer.volume = e.target.value);
+$('#vSpeed').addEventListener('change', e=> vPlayer.playbackRate = parseFloat(e.target.value));
+$('#vFsBtn').onclick = ()=>{
+  const box = $('#videoPlayerBox');
+  if(document.fullscreenElement){ document.exitFullscreen(); }
+  else { (vPlayer.requestFullscreen || box.requestFullscreen)?.call(vPlayer.parentElement); }
+};
+$('#vpCloseBtn').onclick = ()=>{ vPlayer.pause(); $('#videoPlayerBox').classList.add('hidden'); };
+$('#vpPipBtn').onclick = async ()=>{
+  try{ if(document.pictureInPictureElement){ await document.exitPictureInPicture(); } else { await vPlayer.requestPictureInPicture(); } }catch(e){}
+};
+
+/* ========== FAVORITES ========== */
+function toggleFav(n){
+  const i=state.favorites.indexOf(n);
+  if(i>-1){ state.favorites.splice(i,1); toast(t('removedFav'),'💔'); }
+  else { state.favorites.push(n); toast(t('addedFav'),'❤️'); }
+  localStorage.setItem('qq_favs', JSON.stringify(state.favorites));
+  renderSurahs(); renderFavorites();
+}
+function toggleVideoFav(n){
+  const i=state.videoFavorites.indexOf(n);
+  if(i>-1){ state.videoFavorites.splice(i,1); toast(t('removedFav')+' 🎬','💔'); }
+  else { state.videoFavorites.push(n); toast(t('addedFav')+' 🎬','❤️'); }
+  localStorage.setItem('qq_vfavs', JSON.stringify(state.videoFavorites));
+  renderVideos(); renderFavorites();
+}
+function renderFavorites(){
+  const audioGrid = $('#favoritesGrid');
+  const videoGrid = $('#favVideoGrid');
+  const favTab = document.querySelector('[data-favtab].active')?.dataset.favtab || 'audio';
+
+  // audio
+  const favAudio = state.surahs.filter(s=> state.favorites.includes(s.number));
+  audioGrid.innerHTML = favAudio.map(s=>`
+    <div class="glass rounded-[20px] p-[15px]">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="quran-arabic text-[20px] font-[700]">${getSurahDisplayName(s)}</div>
+          <div class="text-[12px] text-dim">${s.ayahs} ${t('ayahs')} • ${revelationLabel(s.revelation)}</div>
+        </div>
+        <button class="neo px-3 py-[8px] rounded-[12px] text-[12px] font-[800]" onclick="playSurah(${s.number}); showView('player')">▶️</button>
+      </div>
+    </div>`).join('');
+
+  // video
+  const favVideo = state.surahs.filter(s=> state.videoFavorites.includes(s.number));
+  videoGrid.innerHTML = favVideo.map(s=>{
+    const pos = parseFloat(localStorage.getItem('vpos_'+s.number)||'0');
+    return `<div class="glass rounded-[20px] p-[15px]">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="quran-arabic text-[19px] font-[700]">🎬 ${getSurahDisplayName(s)}</div>
+          <div class="text-[12px] text-dim">${pos>3 ? '⏱️ '+fmtTime(pos)+' • ' : ''}مرئي • ${RECITER.ar}</div>
+        </div>
+        <button class="neo px-3 py-[8px] rounded-[12px] text-[12px] font-[800]" onclick="playVideo(${s.number})">▶️</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  const totalFav = (favTab==='audio'?favAudio.length:favVideo.length);
+  $('#favEmpty').classList.toggle('hidden', totalFav>0);
+  audioGrid.classList.toggle('hidden', favTab!=='audio' || favAudio.length===0);
+  videoGrid.classList.toggle('hidden', favTab!=='video' || favVideo.length===0);
+}
+// fav tabs
+document.addEventListener('click', e=>{
+  const tab = e.target.closest('[data-favtab]');
+  if(!tab) return;
+  document.querySelectorAll('[data-favtab]').forEach(b=>b.classList.remove('active'));
+  tab.classList.add('active');
+  renderFavorites();
+});
+
+/* ========== SEARCH / FILTER AUDIO ========== */
+$('#searchInput').addEventListener('input', e=>{
+  const q=e.target.value.trim().toLowerCase();
+  if(!q){ state.filtered=[...state.surahs]; applyAudioType(); renderSurahs(); return; }
+  const qNum=parseInt(q.replace(/\D/g,''),10);
+  state.filtered = state.surahs.filter(s=>
+    s.nameAr.includes(e.target.value.trim()) ||
+    s.nameEn.toLowerCase().includes(q) ||
+    s.nameFr.toLowerCase().includes(q) ||
+    s.nameTr.toLowerCase().includes(q) ||
+    (!isNaN(qNum) && s.number===qNum)
+  );
+  applyAudioType(true); renderSurahs();
+});
+let currentAudioType='all';
+$('#typeFilters').addEventListener('click', e=>{
+  const btn=e.target.closest('button[data-filter]'); if(!btn) return;
+  $$('#typeFilters .chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  currentAudioType=btn.dataset.filter;
+  applyAudioType(); renderSurahs();
+});
+function applyAudioType(skipReset=false){
+  const q=$('#searchInput').value.trim();
+  let base = (q && !skipReset) ? state.filtered : [...state.surahs];
+  if(q && skipReset) base = state.filtered;
+  if(currentAudioType==='all') state.filtered = base;
+  else if(currentAudioType==='fav') state.filtered = base.filter(s=> state.favorites.includes(s.number));
+  else if(currentAudioType==='available') state.filtered = base.filter(s=> state.available[s.number]===true);
+  else state.filtered = base.filter(s=> s.revelation===currentAudioType);
+}
+
+/* ========== SEARCH / FILTER VIDEO ========== */
+$('#videoSearchInput').addEventListener('input', e=>{
+  const q=e.target.value.trim().toLowerCase();
+  if(!q){ state.videoFiltered=[...state.surahs]; applyVideoType(); renderVideos(); return; }
+  const qNum=parseInt(q.replace(/\D/g,''),10);
+  state.videoFiltered = state.surahs.filter(s=>
+    s.nameAr.includes(e.target.value.trim()) ||
+    s.nameEn.toLowerCase().includes(q) ||
+    s.nameFr.toLowerCase().includes(q) ||
+    s.nameTr.toLowerCase().includes(q) ||
+    (!isNaN(qNum) && s.number===qNum)
+  );
+  applyVideoType(true); renderVideos();
+});
+let currentVideoType='all';
+$('#videoFilters').addEventListener('click', e=>{
+  const btn=e.target.closest('button[data-vfilter]'); if(!btn) return;
+  $$('#videoFilters .chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  currentVideoType=btn.dataset.vfilter;
+  applyVideoType(); renderVideos();
+});
+function applyVideoType(skipReset=false){
+  const q=$('#videoSearchInput').value.trim();
+  let base = (q && !skipReset) ? state.videoFiltered : [...state.surahs];
+  if(q && skipReset) base = state.videoFiltered;
+  if(currentVideoType==='all') state.videoFiltered = base;
+  else if(currentVideoType==='fav') state.videoFiltered = base.filter(s=> state.videoFavorites.includes(s.number));
+  else if(currentVideoType==='available') state.videoFiltered = base.filter(s=> state.videoAvailable[s.number]===true);
+  else if(currentVideoType==='continue') state.videoFiltered = base.filter(s=> parseFloat(localStorage.getItem('vpos_'+s.number)||'0')>5);
+  else state.videoFiltered = base;
+}
+
+/* ========== LIBRARY SCAN ========== */
+async function scanAudioLibrary(){
+  toast('جاري فحص 114 ملف صوتي محلي…','🔎');
+  let found=0; state.available={};
+  for(let i=1;i<=114;i++){
+    try{ await tryLoadAudio(i); state.available[i]=true; found++; }catch(e){ state.available[i]=false; }
+    if(i%17===0){ $('#detectedCount').textContent=found; await new Promise(r=>setTimeout(r,2)); }
+  }
+  $('#detectedCount').textContent=found;
+  $('#localCountTop').textContent=found;
+  $('#libFound').textContent=found+' / 114';
+  $('#libMissing').textContent=114-found;
+  renderLibraryList(); renderSurahs();
+  toast(`تم اكتشاف ${found} ملف صوتي من 114`, found===114?'✅':'📁');
+}
+function renderLibraryList(){
+  const box=$('#libraryList'); if(!box) return;
+  box.innerHTML = state.surahs.map(s=>{
+    const ok=state.available[s.number];
+    return `<div class="flex items-center justify-between px-[9px] py-[6px] rounded-[10px]" style="background:rgba(255,255,255,.028); border:1px solid var(--glass-b)">
+      <span>${s.number}. ${s.nameAr.replace('سورة ','')}</span>
+      <span class="file-badge ${ok===true?'file-ok':ok===false?'file-miss':''}">${ok===true?'✓':ok===false?'✕':'•'}</span>
+    </div>`;
+  }).join('');
+}
+async function scanVideoLibrary(){
+  toast('جاري فحص 114 ملف فيديو MP4…','🎬');
+  let found=0; state.videoAvailable={};
+  for(let i=1;i<=114;i++){
+    try{ await tryLoadVideo(i); state.videoAvailable[i]=true; found++; }catch(e){ state.videoAvailable[i]=false; }
+    if(i%12===0){ $('#detectedVideoCount').textContent=found; await new Promise(r=>setTimeout(r,2)); }
+  }
+  $('#detectedVideoCount').textContent=found;
+  $('#localVideoCountTop').textContent=found;
+  const vlf=$('#vLibFound'); if(vlf) vlf.textContent = found+' / 114';
+  const vlm=$('#vLibMissing'); if(vlm) vlm.textContent = 114-found;
+  renderVideoLibraryList(); renderVideos();
+  toast(`تم اكتشاف ${found} ملف فيديو من 114`, found>0?'🎬':'📁');
+}
+function renderVideoLibraryList(){
+  const box=$('#videoLibraryList'); if(!box) return;
+  box.innerHTML = state.surahs.map(s=>{
+    const ok=state.videoAvailable[s.number];
+    const pos=parseFloat(localStorage.getItem('vpos_'+s.number)||'0');
+    return `<div class="flex items-center justify-between px-[9px] py-[6px] rounded-[10px]" style="background:rgba(255,255,255,.028); border:1px solid var(--glass-b)">
+      <span>${s.number}. ${s.nameAr.replace('سورة ','')}</span>
+      <span class="file-badge ${ok===true?'file-ok':ok===false?'file-miss':''}">${ok===true?(pos>3?'⏱':'✓'):ok===false?'✕':'•'}</span>
+    </div>`;
+  }).join('');
+}
+
+/* ========== VIEWS ========== */
+function showView(v){
+  $$('.view-section').forEach(el=> el.classList.add('hidden'));
+  const map={home:'view-home', videos:'view-videos', player:'view-player', favorites:'view-favorites', settings:'view-settings'};
+  const el=document.getElementById(map[v]||'view-home'); if(el) el.classList.remove('hidden');
+  $$('#bottomNav .nav-item').forEach(n=> n.classList.toggle('active', n.dataset.view===v));
+  window.scrollTo({top:0, behavior:'smooth'});
+  if(v==='favorites') renderFavorites();
+  if(v==='videos') renderVideos();
+}
+$$('#bottomNav .nav-item').forEach(nav=>{
+  nav.addEventListener('click', ()=>{
+    const v=nav.dataset.view;
+    showView(v);
+    if(nav.dataset.scroll==='surahs'){
+      showView('home');
+      setTimeout(()=> $('#surahGrid').scrollIntoView({behavior:'smooth', block:'start'}), 90);
+    }
+  });
+});
+
+/* ========== LANG / THEME ========== */
+function applyLang(){
+  const isRTL = state.lang==='ar';
+  document.documentElement.lang=state.lang;
+  document.documentElement.dir=isRTL?'rtl':'ltr';
+  document.body.dir=isRTL?'rtl':'ltr';
+  localStorage.setItem('qq_lang', state.lang);
+  $$('[data-i]').forEach(el=>{ const k=el.getAttribute('data-i'); if(t(k)!==k) el.textContent=t(k); });
+  const si=$('#searchInput'); if(si) si.placeholder=t('searchPh');
+  const lsw=$('#lblSurahWord'); if(lsw) lsw.textContent=t('surahWord');
+  const lan=$('#lblAutoNext'); if(lan) lan.textContent=t('autoplayNext');
+  $$('.lang-opt').forEach(b=> b.classList.toggle('active', b.dataset.lang===state.lang));
+  renderSurahs(); renderVideos(); renderFavorites(); updateAudioUI();
+}
+function applyTheme(){
+  document.body.setAttribute('data-theme', state.theme);
+  $('#themeToggle').textContent = state.theme==='dark'?'🌙':'☀️';
+  localStorage.setItem('qq_theme', state.theme);
+}
+
+/* ========== SAVE / RESTORE ========== */
+function saveLastAudio(){
+  if(!state.currentSurah) return;
+  localStorage.setItem('qq_last', JSON.stringify({surah:state.currentSurah.number, time:Date.now()}));
+}
+function saveLastVideo(num){
+  localStorage.setItem('qq_vlast', JSON.stringify({num, t:Date.now()}));
+}
+function getLastAudio(){ try{ return JSON.parse(localStorage.getItem('qq_last')||'null')}catch(e){return null} }
+function getLastVideo(){ try{ return JSON.parse(localStorage.getItem('qq_vlast')||'null')}catch(e){return null} }
+
+/* ========== INIT ========== */
+async function init(){
+  applyTheme();
+  // reciters strip
+  const rs=$('#recitersStrip');
+  rs.innerHTML = `
+    <div class="chip active" style="padding:10px 18px; min-width:250px">
+      <div class="text-[13.5px] font-[800]" style="color:var(--gold)">🎙️ الشيخ محمود سلمان الحلفاوي</div>
+      <div class="text-[11px] text-dim">تلاوات منقاة • صوت MP3 + فيديو MP4 • Offline HQ</div>
+    </div>
+    <div class="chip" style="opacity:.72"><div class="text-[12.5px] font-[700]">محمد صديق المنشاوي</div><div class="text-[10.5px] text-dim">قريباً – أوفلاين</div></div>
+    <div class="chip" style="opacity:.72"><div class="text-[12.5px] font-[700]">عبد الباسط عبد الصمد</div><div class="text-[10.5px] text-dim">قريباً – أوفلاين</div></div>
+    <div class="chip" style="opacity:.72"><div class="text-[12.5px] font-[700]">ماهر المعيقلي</div><div class="text-[10.5px] text-dim">قريباً – أوفلاين</div></div>
+  `;
+  state.filtered=[...state.surahs];
+  state.videoFiltered=[...state.surahs];
+  renderSurahs();
+  renderVideos();
+  applyLang();
+
+  // settings UI
+  $$('.lang-opt').forEach(b=> b.onclick = ()=> { state.lang=b.dataset.lang; applyLang(); toast(t('saved'),'✅'); });
+  const tss=$('#textSizeSlider'); if(tss){ tss.value=state.textSize; $('#textSizeVal').textContent=state.textSize+'px';
+    tss.oninput=e=>{ state.textSize=e.target.value; document.body.style.fontSize=state.textSize+'px'; $('#textSizeVal').textContent=state.textSize+'px'; localStorage.setItem('qq_textsize', state.textSize); };
+  }
+  const fs=$('#fontSelect'); if(fs){ fs.value=state.font; fs.onchange=e=>{ state.font=e.target.value; localStorage.setItem('qq_font', state.font);
+    const fm={tajawal:"'Tajawal',sans-serif", amiri:"'Amiri',serif", scheherazade:"'Scheherazade New',serif"};
+    document.body.style.fontFamily=fm[state.font]||fm.tajawal; toast('تم تغيير الخط','🔤'); };
+    fs.dispatchEvent(new Event('change'));
+  }
+  const aps=$('#autoPlaySetting'); if(aps){ aps.checked=state.autoNext; aps.onchange=e=>{ state.autoNext=e.target.checked; localStorage.setItem('qq_autonext', state.autoNext); }; }
+  const sps=$('#savePositionSetting'); if(sps){ sps.checked=state.savePos; sps.onchange=e=>{ state.savePos=e.target.checked; localStorage.setItem('qq_savepos', state.savePos); }; }
+  const anf=$('#autoNextFull'); if(anf){ anf.checked=state.autoNext; anf.onchange=e=>{ state.autoNext=e.target.checked; if(aps) aps.checked=state.autoNext; localStorage.setItem('qq_autonext', state.autoNext); }; }
+
+  // buttons
+  $('#themeToggle').onclick = ()=>{ state.theme = state.theme==='dark'?'light':'dark'; applyTheme(); };
+  $('#settingsOpenBtn').onclick = ()=> showView('settings');
+  $('#browseBtn').onclick = ()=> { showView('home'); setTimeout(()=> $('#surahGrid').scrollIntoView({behavior:'smooth'}),120); };
+  $('#resumeBtn').onclick = ()=>{
+    const last=getLastAudio();
+    if(last && last.surah){ playSurah(last.surah); showView('player'); } else { playSurah(1); showView('player'); }
+  };
+  const rvb=$('#resumeVideoBtn'); if(rvb){ rvb.onclick = ()=>{
+    const last=getLastVideo();
+    if(last && last.num){ playVideo(last.num); showView('videos'); }
+    else { const cont = state.surahs.find(s=> parseFloat(localStorage.getItem('vpos_'+s.number)||'0')>5 );
+      if(cont) playVideo(cont.number); else playVideo(1);
+      showView('videos');
+    }
+  };}
+
+  // scan buttons
+  const slb=$('#scanLibraryBtn'); if(slb) slb.onclick=scanAudioLibrary;
+  const scl=$('#scanBtn'); if(scl) scl.onclick = ()=>{ scanAudioLibrary(); scanVideoLibrary(); showView('settings'); };
+  const svb=$('#scanVideoBtn'); if(svb) svb.onclick=scanVideoLibrary;
+
+  // folder mapping
+  $('#mapFolderBtn')?.addEventListener('click', ()=> $('#folderInput').click());
+  $('#folderInput')?.addEventListener('change', e=>{
+    const files=[...e.target.files].filter(f=> /\.(mp3|m4a|ogg|wav)$/i.test(f.name));
+    let mapped=0;
+    files.forEach(file=>{
+      const m=file.name.match(/(\d{1,3})/);
+      if(m){ const num=parseInt(m[1],10); if(num>=1&&num<=114){ const url=URL.createObjectURL(file); state.fileMap[num]=url; state.available[num]=true; mapped++; } }
+    });
+    toast(`تم ربط ${mapped} ملف صوتي مؤقتاً`,'📂');
+    renderSurahs(); renderLibraryList();
+  });
+  $('#mapVideoFolderBtn')?.addEventListener('click', ()=> $('#videoFolderInput').click());
+  $('#videoFolderInput')?.addEventListener('change', e=>{
+    const files=[...e.target.files].filter(f=> /\.(mp4|webm|mov|m4v)$/i.test(f.name));
+    let mapped=0;
+    files.forEach(file=>{
+      const m=file.name.match(/(\d{1,3})/);
+      if(m){ const num=parseInt(m[1],10); if(num>=1&&num<=114){ const url=URL.createObjectURL(file); state.videoFileMap[num]=url; state.videoAvailable[num]=true; mapped++; } }
+    });
+    toast(`تم ربط ${mapped} ملف فيديو مؤقتاً`,'🎬');
+    renderVideos(); renderVideoLibraryList();
+  });
+
+  // export / clear
+  $('#exportMapBtn')?.addEventListener('click', ()=>{
+    const map={}; state.surahs.forEach(s=> map[s.number]=audioCandidates(s.number)[0]);
+    const blob=new Blob([JSON.stringify(map,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='quran-offline-audio-map.json'; a.click();
+    toast('تم تصدير خريطة الصوت','📋');
+  });
+  $('#exportVideoMapBtn')?.addEventListener('click', ()=>{
+    const map={}; state.surahs.forEach(s=> map[s.number]=videoCandidates(s.number)[0]);
+    const blob=new Blob([JSON.stringify(map,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='quran-offline-video-map.json'; a.click();
+    toast('تم تصدير خريطة الفيديو','📋');
+  });
+  $('#clearVideoProgressBtn')?.addEventListener('click', ()=>{
+    if(confirm('مسح تقدم مشاهدة كل الفيديوهات؟')){
+      for(let i=1;i<=114;i++){ localStorage.removeItem('vpos_'+i); localStorage.removeItem('vdur_'+i); }
+      localStorage.removeItem('qq_vlast');
+      toast('تم مسح تقدم الفيديو','🧹');
+      renderVideos();
+    }
+  });
+  $('#clearCacheBtn').onclick = ()=>{
+    if(confirm(state.lang==='ar'?'مسح كل البيانات المحلية؟':'Clear all local data?')){
+      const keepLang=state.lang;
+      localStorage.clear();
+      localStorage.setItem('qq_lang', keepLang);
+      location.reload();
+    }
+  };
+  $('#exportFavBtn').onclick = ()=>{
+    const data={audioFavorites:state.favorites, videoFavorites:state.videoFavorites, exportedAt:new Date().toISOString()};
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='quran-offline-favorites.json'; a.click();
+    toast(t('copied'),'📋');
+  };
+
+  // audio player controls
+  $('#dockPlay').onclick = pauseResume;
+  const bpf=$('#btnPlayFull'); if(bpf) bpf.onclick=pauseResume;
+  $('#dockNext').onclick = nextSurah;
+  const bnF=$('#btnNextFull'); if(bnF) bnF.onclick=nextSurah;
+  $('#dockPrev').onclick = prevSurah;
+  const bpF=$('#btnPrevFull'); if(bpF) bpF.onclick=prevSurah;
+  const bfW=$('#btnFW'); if(bfW) bfW.onclick=()=>{ if(audio.duration) audio.currentTime=Math.min(audio.currentTime+10, audio.duration-0.5); };
+  const bRW=$('#btnRW'); if(bRW) bRW.onclick=()=> audio.currentTime=Math.max(audio.currentTime-10,0);
+  const vF=$('#volFull'); if(vF) vF.addEventListener('input', e=> audio.volume=e.target.value);
+  $('#dockSeek').addEventListener('input', e=> { if(audio.duration) audio.currentTime = e.target.value/100*audio.duration; });
+  const psf=$('#playerSeekFull'); if(psf) psf.addEventListener('input', e=> { if(audio.duration) audio.currentTime = e.target.value/100*audio.duration; });
+
+  const repeatBtn=$('#repeatBtn'); if(repeatBtn) repeatBtn.onclick=()=>{
+    state.repeatMode=(state.repeatMode+1)%3;
+    const labels = state.lang==='ar'?['إيقاف','سورة واحدة','الكل']:['Off','One','All'];
+    $('#repeatLabel').textContent=labels[state.repeatMode];
+  };
+  const copyBtn=$('#copyFilePathBtn'); if(copyBtn) copyBtn.onclick=()=>{
+    if(state.currentSurah){ const p=audioCandidates(state.currentSurah.number)[0]; navigator.clipboard?.writeText(p); toast('📋 '+p,'✅'); }
+  };
+
+  $('#fabTop').onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+
+  // restore last audio
+  const lastA=getLastAudio();
+  if(lastA){ const s=state.surahs.find(x=>x.number===lastA.surah); if(s){ state.currentSurah=s; updateAudioUI();
+    const rbt=$('#resumeBtnTxt'); if(rbt) rbt.textContent=(state.lang==='ar'?'استكمال: ':'Resume: ')+getSurahDisplayName(s);
+  }}
+  // restore last video banner
+  const lastV=getLastVideo();
+  if(lastV && lastV.num){
+    const s=state.surahs.find(x=>x.number===lastV.num);
+    if(s){
+      setTimeout(()=> toast('⏯️ متابعة الفيديو: '+getSurahDisplayName(s)+' • اضغط "استكمال آخر فيديو"','🎬'), 1200);
+    }
+  }
+
+  // auto scan
+  setTimeout(()=>{ scanAudioLibrary(); }, 900);
+  setTimeout(()=>{ scanVideoLibrary(); }, 1600);
+
+  toast(state.lang==='ar' ? 'مرحباً بك – صوت + مرئيات • الشيخ محمود سلمان الحلفاوي • Offline' : 'Welcome – Audio + Video Offline','🕌');
+}
+init();
+
+// keyboard shortcuts
+document.addEventListener('keydown', e=>{
+  if(e.code==='Space' && !['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)){
+    e.preventDefault();
+    // if video player visible and playing?
+    const vpBox = $('#videoPlayerBox');
+    if(vpBox && !vpBox.classList.contains('hidden') && document.activeElement.tagName!=='INPUT'){
+      if(vPlayer.paused) vPlayer.play(); else vPlayer.pause();
+    } else {
+      pauseResume();
+    }
+  }
+});
+
+/* ========== PWA ========== */
+(function pwa(){
+  const manifest={
+    name:"القرآن الكريم منقى صوتياً ومرئياً – الحلفاوي Offline",
+    short_name:"قرآن منقى AV",
+    description:"114 سورة صوت MP3 + فيديو MP4 – الشيخ محمود سلمان الحلفاوي – يعمل بدون إنترنت",
+    start_url:".",
+    display:"standalone",
+    background_color:"#0B1026",
+    theme_color:"#0B1026",
+    lang:"ar", dir:"rtl",
+    icons:[
+      {src:"assets/images/logo.png", sizes:"512x512", type:"image/png", purpose:"any maskable"},
+      {src:"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%230B1026'/%3E%3Ctext x='256' y='300' text-anchor='middle' font-size='170' fill='%23FFD700'%3E🕌%3C/text%3E%3Ctext x='256' y='410' text-anchor='middle' font-size='54' fill='%2300C896'%3E🎬%3C/text%3E%3C/svg%3E", sizes:"512x512", type:"image/svg+xml"}
+    ]
+  };
+  const blob=new Blob([JSON.stringify(manifest)],{type:'application/json'});
+  const link=document.createElement('link'); link.rel='manifest'; link.href=URL.createObjectURL(blob); document.head.appendChild(link);
+
+  if('serviceWorker' in navigator){
+    const sw=`
+      const CACHE='quran-halafawy-av-v5';
+      const CORE=['./','./index.html'];
+      self.addEventListener('install',e=>{ e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())); });
+      self.addEventListener('activate',e=>{ e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))); self.clients.claim(); });
+      self.addEventListener('fetch',e=>{
+        const url=new URL(e.request.url);
+        if(url.pathname.includes('/assets/')){
+          e.respondWith(caches.match(e.request).then(r=> r || fetch(e.request).then(res=>{
+            if(res.ok){ const copy=res.clone(); caches.open(CACHE).then(c=>c.put(e.request,copy)); }
+            return res;
+          }).catch(()=>r)));
+          return;
+        }
+        e.respondWith(fetch(e.request).catch(()=> caches.match(e.request).then(r=> r || caches.match('./index.html'))));
+      });
+    `;
+    const swBlob=new Blob([sw],{type:'application/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(swBlob)).catch(()=>{});
+  }
+})();
+
+// expose for inline onclick
+window.playSurah = playSurah;
+window.playVideo = playVideo;
+window.showView = showView;
+</script>
+</body>
+</html>
